@@ -24,4 +24,3 @@ bld/
 *.pdf
 *.run.xml
 *.synctex.gz
-!Currency.pdf
