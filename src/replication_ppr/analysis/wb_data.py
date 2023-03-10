@@ -11,5 +11,6 @@ data_wb = wb.data.DataFrame(
     economy="all",
     time="all",
     columns="series",
+    labels=True,
 )
 data_wb
