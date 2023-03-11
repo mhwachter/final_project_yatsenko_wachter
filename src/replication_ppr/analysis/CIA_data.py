@@ -1,5 +1,6 @@
 import os
 
+import pandas as pd
 from bs4 import BeautifulSoup
 
 # Load the HTML file
@@ -18,3 +19,8 @@ a_tags = soup.find_all("a")
 # Extract the country names from the <a> tags
 countries = [a_tag.text for a_tag in a_tags]
 countries = [i for i in countries if not i.isupper() or len(i) > 1]
+
+# WTO countries code to delete to date and just leave the year.
+join = pd.read_excel("src/replication_ppr/data/Countries_member_WTO.xls")
+
+join = pd.DataFrame
