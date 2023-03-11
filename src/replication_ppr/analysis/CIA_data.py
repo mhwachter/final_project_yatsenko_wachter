@@ -3,7 +3,7 @@ import os
 from bs4 import BeautifulSoup
 
 # Load the HTML file
-file_path = "/Users/anzhelikayatsenko/Desktop/MASTERS/epp-2022/final_project/final_project_yatsenko_wachter/src/replication_ppr/data/countrylisting.htmlfinal_project/final_project_yatsenko_wachter/src/replication_ppr/data/countrylisting.html"
+file_path = "src/replication_ppr/data/countrylisting.html"
 if os.path.isfile(file_path):
     with open(file_path) as f:
         html_content = f.read()
