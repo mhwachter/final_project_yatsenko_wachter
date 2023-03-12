@@ -51,7 +51,8 @@ for i in range(len(df)):
 
 # create new dataframe with distance values
 distance_df = pd.DataFrame(
-    distances, columns=["Country 1", "Country 2", "Pair ID", "Distance (km)"],
+    distances,
+    columns=["Country 1", "Country 2", "Pair ID", "Distance (km)"],
 )
 
 # print out dataframe
