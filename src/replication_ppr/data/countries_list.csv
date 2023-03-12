@@ -1,179 +1,179 @@
-country
-Albania
-Algeria
-Angola
-Antigua and Barbuda
-Argentina
-Armenia
-Australia
-Austria
-Azerbaijan
-Bahamas
-Bahrain
-Bangladesh
-Barbados
-Belarus
-Belgium
-Belize
-Benin
-Bermuda
-Bhutan
-Bolivia
-Botswana
-Brazil
-Bulgaria
-Burkina Faso
-Burma (Myanmar)
-Burundi
-Cambodia
-Cameroon
-Canada
-Cape Verde
-Central African Rep.
-Chad
-Chile
-China
-Colombia
-Comoros
-Congo Dem. Rep. of  (Zaire)
-Congo Rep.
-Costa Rica
-Cote D'Ivoire  (Ivory Coast)
-Croatia
-Cyprus
-Czech Republic
-Denmark
-Djibouti
-Dominica
-Dominican Rep.
-Ecuador
-Egypt
-El Salvador
-Equatorial Guinea
-Estonia
-Ethiopia
-Fiji
-Finland
-France
-Gabon
-Gambia
-Georgia
-Germany
-Ghana
-Greece
-Grenada
-Guatemala
-Guinea
-Guinea-Bissau
-Guyana
-Haiti
-Honduras
-Hong Kong
-Hungary
-Iceland
-India
-Indonesia
-Iran
-Iraq
-Ireland
-Israel
-Italy
-Jamaica
-Japan
-Jordan
-Kazakhstan
-Kenya
-Kiribati
-Korea South (R)
-Kuwait
-Kyrgyz Republic
-Lao People's Dem. Rep.
-Latvia
-Lebanon
-Lesotho
-Liberia
-Libya
-Lithuania
-Luxembourg
-Macedonia
-Madagascar
-Malawi
-Malaysia
-Maldives
-Mali
-Malta
-Mauritania
-Mauritius
-Mexico
-Moldova
-Mongolia
-Morocco
-Mozambique
-Namibia
-Nepal
-Netherlands
-New Zealand
-Nicaragua
-Niger
-Nigeria
-Norway
-Oman
-Pakistan
-Panama
-Papua N. Guinea
-Paraguay
-Peru
-Philippines
-Poland
-Portugal
-Qatar
-Reunion
-Romania
-Russia
-Rwanda
-Samoa
-Sao Tome & Principe
-Saudi Arabia
-Senegal
-Seychelles
-Sierra Leone
-Singapore
-Slovak Republic
-Slovenia
-Solomon Islands
-Somalia
-South Africa
-Spain
-Sri Lanka
-St. Kitts & Nevis
-St. Lucia
-St. Vincent & Gren.
-Sudan
-Suriname
-Swaziland
-Sweden
-Switzerland
-Syria
-Tajikistan
-Tanzania
-Thailand
-Togo
-Tonga
-Trinidad & Tobago
-Tunisia
-Turkey
-Turkmenistan
-Uganda
-Ukraine
-United Arab Emirates
-United Kingdom
-United States
-Uruguay
-Uzbekistan
-Vanuatu
-Venezuela
-Vietnam
-Yemen Republic of
-Yugoslavia Socialist Fed. R.
-Zambia
-Zimbabwe
+,country,ISO3
+0,Albania,ALB
+1,Algeria,DZA
+2,Angola,AGO
+3,Antigua and Barbuda,ATG
+4,Argentina,ARG
+5,Armenia,ARM
+6,Australia,AUS
+7,Austria,AUT
+8,Azerbaijan,AZE
+9,Bahamas,BHS
+10,Bahrain,BHR
+11,Bangladesh,BGD
+12,Barbados,BRB
+13,Belarus,BLR
+14,Belgium,BEL
+15,Belize,BLZ
+16,Benin,BEN
+17,Bermuda,BMU
+18,Bhutan,BTN
+19,Bolivia,BOL
+20,Botswana,BWA
+21,Brazil,BRA
+22,Bulgaria,BGR
+23,Burkina Faso,BFA
+24,Burma (Myanmar),MMR
+25,Burundi,BDI
+26,Cambodia,KHM
+27,Cameroon,CMR
+28,Canada,CAN
+29,Cape Verde,CPV
+30,Central African Rep.,CAF
+31,Chad,TCD
+32,Chile,CHL
+33,China,CHN
+34,Colombia,COL
+35,Comoros,COM
+36,Congo Dem. Rep. of  (Zaire),COD
+37,Congo Rep.,COG
+38,Costa Rica,CRI
+39,Cote D'Ivoire  (Ivory Coast),CIV
+40,Croatia,HRV
+41,Cyprus,CYP
+42,Czech Republic,CZE
+43,Denmark,DNK
+44,Djibouti,DJI
+45,Dominica,DMA
+46,Dominican Rep.,DOM
+47,Ecuador,ECU
+48,Egypt,EGY
+49,El Salvador,SLV
+50,Equatorial Guinea,GNQ
+51,Estonia,EST
+52,Ethiopia,ETH
+53,Fiji,FJI
+54,Finland,FIN
+55,France,FRA
+56,Gabon,GAB
+57,Gambia,GMB
+58,Georgia,GEO
+59,Germany,DEU
+60,Ghana,GHA
+61,Greece,GRC
+62,Grenada,GRD
+63,Guatemala,GTM
+64,Guinea,GIN
+65,Guinea-Bissau,GNB
+66,Guyana,GUY
+67,Haiti,HTI
+68,Honduras,HND
+69,Hong Kong,HKG
+70,Hungary,HUN
+71,Iceland,ISL
+72,India,IND
+73,Indonesia,IDN
+74,Iran,IRN
+75,Iraq,IRQ
+76,Ireland,IRL
+77,Israel,ISR
+78,Italy,ITA
+79,Jamaica,JAM
+80,Japan,JPN
+81,Jordan,JOR
+82,Kazakhstan,KAZ
+83,Kenya,KEN
+84,Kiribati,KIR
+85,Korea South (R),KOR
+86,Kuwait,KWT
+87,Kyrgyz Republic,KGZ
+88,Lao People's Dem. Rep.,LAO
+89,Latvia,LVA
+90,Lebanon,LBN
+91,Lesotho,LSO
+92,Liberia,LBR
+93,Libya,LBY
+94,Lithuania,LTU
+95,Luxembourg,LUX
+96,Macedonia,MKD
+97,Madagascar,MDG
+98,Malawi,MWI
+99,Malaysia,MYS
+100,Maldives,MDV
+101,Mali,MLI
+102,Malta,MLT
+103,Mauritania,MRT
+104,Mauritius,MUS
+105,Mexico,MEX
+106,Moldova,MDA
+107,Mongolia,MNG
+108,Morocco,MAR
+109,Mozambique,MOZ
+110,Namibia,NAM
+111,Nepal,NPL
+112,Netherlands,NLD
+113,New Zealand,NZL
+114,Nicaragua,NIC
+115,Niger,NER
+116,Nigeria,NGA
+117,Norway,NOR
+118,Oman,OMN
+119,Pakistan,PAK
+120,Panama,PAN
+121,Papua N. Guinea,PNG
+122,Paraguay,PRY
+123,Peru,PER
+124,Philippines,PHL
+125,Poland,POL
+126,Portugal,PRT
+127,Qatar,QAT
+128,Reunion,REU
+129,Romania,ROU
+130,Russia,RUS
+131,Rwanda,RWA
+132,Samoa,WSM
+133,Sao Tome & Principe,STP
+134,Saudi Arabia,SAU
+135,Senegal,SEN
+136,Seychelles,SYC
+137,Sierra Leone,SLE
+138,Singapore,SGP
+139,Slovak Republic,SVK
+140,Slovenia,SVN
+141,Solomon Islands,SLB
+142,Somalia,SOM
+143,South Africa,ZAF
+144,Spain,ESP
+145,Sri Lanka,LKA
+146,St. Kitts & Nevis,KNA
+147,St. Lucia,LCA
+148,St. Vincent & Gren.,VCT
+149,Sudan,SDN
+150,Suriname,SUR
+151,Swaziland,SWZ
+152,Sweden,SWE
+153,Switzerland,CHE
+154,Syria,SYR
+155,Tajikistan,TJK
+156,Tanzania,TZA
+157,Thailand,THA
+158,Togo,TGO
+159,Tonga,TON
+160,Trinidad & Tobago,TTO
+161,Tunisia,TUN
+162,Turkey,TUR
+163,Turkmenistan,TKM
+164,Uganda,UGA
+165,Ukraine,UKR
+166,United Arab Emirates,ARE
+167,United Kingdom,GBR
+168,United States,USA
+169,Uruguay,URY
+170,Uzbekistan,UZB
+171,Vanuatu,VUT
+172,Venezuela,VEN
+173,Vietnam,VNM
+174,Yemen Republic of,YEM
+175,Yugoslavia Socialist Fed. R.,not found
+176,Zambia,ZMB
+177,Zimbabwe,ZWE

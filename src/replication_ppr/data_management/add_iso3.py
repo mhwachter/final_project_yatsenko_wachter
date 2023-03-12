@@ -5,3 +5,4 @@ data = pd.read_csv("src/replication_ppr/data/countries_list.csv")
 countries_list = data["country"].tolist()
 standard_names = coco.convert(names=countries_list, to="ISO3")
 data["ISO3"] = standard_names
+data.to_csv("src/replication_ppr/data/countries_list.csv")
