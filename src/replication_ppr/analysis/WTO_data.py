@@ -1,9 +1,7 @@
 import pandas as pd
 
 # WTO countries code to delete to date and just leave the year.
-join = pd.read_excel(
-    "/Users/anzhelikayatsenko/Desktop/MASTERS/epp-2022/final_project/final_project_yatsenko_wachter/src/replication_ppr/data/Countries_member_WTO.xls",
-)
+join = pd.read_excel("src/replication_ppr/data/Countries_member_WTO.xls")
 join = pd.DataFrame(join)
 join = join.rename(columns={"Membership Date": "Membership_Date"})
 join["Membership_Date"] = pd.to_datetime(join["Membership_Date"])
