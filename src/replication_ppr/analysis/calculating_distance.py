@@ -17,8 +17,8 @@ def get_lat_long(country):
 # create dataframe
 df = pd.DataFrame(
     {
-        "Country": ["Angola", "Algeria"],
-        "Coordinates": ["12 30 S, 18 30 E", "28 00 N, 3 00 E"],
+        "Country": ["Afghanistan", "Akrotiri"],
+        "Coordinates": ["47 20 N, 13 20 E", "41 00 N, 20 00 E"],
     },
 )
 
@@ -32,6 +32,7 @@ df["Longitude"] = df["Country"].apply(
 
 # calculate distance between each pair of countries
 distances = []
+pair_id = 1
 for i in range(len(df)):
     for j in range(i + 1, len(df)):
         if (
@@ -44,11 +45,13 @@ for i in range(len(df)):
                 (df["Latitude"][i], df["Longitude"][i]),
                 (df["Latitude"][j], df["Longitude"][j]),
             ).km
-            distances.append((df["Country"][i], df["Country"][j], d))
+            pair_code = pair_id
+            pair_id += 1
+            distances.append((df["Country"][i], df["Country"][j], pair_code, d))
 
 # create new dataframe with distance values
 distance_df = pd.DataFrame(
-    distances, columns=["Country 1", "Country 2", "Distance (km)"],
+    distances, columns=["Country 1", "Country 2", "Pair ID", "Distance (km)"],
 )
 
 # print out dataframe
