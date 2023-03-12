@@ -1,41 +1,54 @@
-from math import atan2, cos, radians, sin, sqrt
+import pandas as pd
+from geopy.distance import distance
+from geopy.geocoders import Nominatim
 
-# Define the latitude and longitude coordinates of the countries in a dictionary
-country_coordinates = {
-    "Colombia": ("4 00 N", "72 00 W"),
-    "Comoros": ("12 10 S", "44 15 E"),
-    "Congo, Democratic Republic of the": ("0 00 N", "25 00 E"),
-    "Congo, Republic of the": ("1 00 S", "15 00 E"),
-}
+# create geocoder object
+geolocator = Nominatim(user_agent="my-app")
 
-# Define a function to convert coordinates from "4 00 N, 72 00 W" to "4, -72"
-def convert_coordinates(coord_str):
-    degrees, minutes, direction = coord_str.split()
-    decimal_degrees = int(degrees) + float(minutes) / 60
-    if direction in ["S", "W"]:
-        decimal_degrees *= -1
-    return decimal_degrees
+# define function to get latitude and longitude values for a country
+def get_lat_long(country):
+    location = geolocator.geocode(country)
+    if location is not None:
+        return (location.latitude, location.longitude)
+    else:
+        return None
 
 
-# Define a function to calculate the distance between two points in km
+# create dataframe
+df = pd.DataFrame(
+    {
+        "Country": ["Angola", "Algeria"],
+        "Coordinates": ["12 30 S, 18 30 E", "28 00 N, 3 00 E"],
+    },
+)
 
+# create new columns for latitude and longitude
+df["Latitude"] = df["Country"].apply(
+    lambda x: get_lat_long(x)[0] if get_lat_long(x) is not None else None,
+)
+df["Longitude"] = df["Country"].apply(
+    lambda x: get_lat_long(x)[1] if get_lat_long(x) is not None else None,
+)
 
-def distance(coord1, coord2):
-    # convert decimal degrees to radians
-    lat1, lon1 = map(radians, coord1)
-    lat2, lon2 = map(radians, coord2)
+# calculate distance between each pair of countries
+distances = []
+for i in range(len(df)):
+    for j in range(i + 1, len(df)):
+        if (
+            df["Latitude"][i] is not None
+            and df["Longitude"][i] is not None
+            and df["Latitude"][j] is not None
+            and df["Longitude"][j] is not None
+        ):
+            d = distance(
+                (df["Latitude"][i], df["Longitude"][i]),
+                (df["Latitude"][j], df["Longitude"][j]),
+            ).km
+            distances.append((df["Country"][i], df["Country"][j], d))
 
-    # Haversine formula
-    dlat = lat2 - lat1
-    dlon = lon2 - lon1
-    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
-    c = 2 * atan2(sqrt(a), sqrt(1 - a))
-    return 6371 * c
+# create new dataframe with distance values
+distance_df = pd.DataFrame(
+    distances, columns=["Country 1", "Country 2", "Distance (km)"],
+)
 
-
-# Loop over each pair of countries and calculate the distance between them
-for _country1, coords1 in country_coordinates.items():
-    lat1, lon1 = (convert_coordinates(c) for c in coords1)
-    for _country2, coords2 in country_coordinates.items():
-        lat2, lon2 = (convert_coordinates(c) for c in coords2)
-        dist = distance((lat1, lon1), (lat2, lon2))
+# print out dataframe
