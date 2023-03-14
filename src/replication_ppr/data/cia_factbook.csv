@@ -1,0 +1,175 @@
+,country,coordinates,landlocked,language,area,island
+0,Albania,"41 00 N, 20 00 E",0,Albanian,"28,748",691
+1,Algeria,"28 00 N, 3 00 E",0,Arabic,"2,381,740",6734
+2,Angola,"12 30 S, 18 30 E",0,Portuguese,"1,246,700",5369
+3,Antigua and Barbuda,"17 03 N, 61 48 W",0,English,443,0
+4,Argentina,"34 00 S, 64 00 W",0,Spanish,"2,780,400",11968
+5,Armenia,"40 00 N, 45 00 E",1,Armenian,"29,743",1570
+6,Australia,"27 00 S, 133 00 E",0,English,"7,741,220",0
+7,Austria,"47 20 N, 13 20 E",1,German,"83,871",2524
+8,Azerbaijan,"40 30 N, 47 30 E",1,Azerbaijani,"86,600",2468
+9,"Bahamas, The","24 15 N, 76 00 W",0,English,"13,880",0
+10,Bahrain,"26 00 N, 50 33 E",0,Arabic,760,0
+11,Bangladesh,"24 00 N, 90 00 E",0,Bangla,"148,460",4413
+12,Barbados,"13 10 N, 59 32 W",0,English,430,0
+13,Belarus,"53 00 N, 28 00 E",1,Russian,"207,600",3599
+14,Belgium,"50 50 N, 4 00 E",0,Dutch,"30,528",1297
+15,Belize,"17 15 N, 88 45 W",0,English,"22,966",542
+16,Benin,"9 30 N, 2 15 E",0,55,"112,622",2123
+17,Bermuda,"32 20 N, 64 45 W",0,English,54,0
+18,Bhutan,"27 30 N, 90 30 E",1,Sharchopkha,"38,394",1136
+19,Bolivia,"17 00 S, 65 00 W",1,Spanish,"1,098,581",7252
+20,Botswana,"22 00 S, 24 00 E",1,Setswana,"581,730",4347.15
+21,Brazil,"10 00 S, 55 00 W",0,Portuguese,"8,515,770",16145
+22,Bulgaria,"43 00 N, 25 00 E",0,Bulgarian,"110,879",1806
+23,Burkina Faso,"13 00 N, 2 00 W",1,Mossi,"274,200",3611
+24,Burma,"22 00 N, 98 00 E",0,Burmese,"676,578",6522
+25,Burundi,"3 30 S, 30 00 E",1,Kirundi,"27,830",1140
+26,Cambodia,"13 00 N, 105 00 E",0,Khmer,"181,035",2530
+27,Cameroon,"6 00 N, 12 00 E",0,24,"475,440",5018
+28,Canada,"60 00 N, 95 00 W",0,English,"9,984,670",8891
+29,Central African Republic,"7 00 N, 21 00 E",1,French,"622,984",5920
+30,Chad,"15 00 N, 19 00 E",1,French,1.284,6406
+31,Chile,"30 00 S, 71 00 W",0,Spanish,"756,102",7801
+32,China,"35 00 N, 105 00 E",0,Standard,"9,596,960",22457
+33,Colombia,"4 00 N, 72 00 W",0,Spanish,"1,138,910",6672
+34,Comoros,"12 10 S, 44 15 E",0,Arabic,"2,235",0
+35,"Congo, Democratic Republic of the","0 00 N, 25 00 E",0,French,"2,344,858",11027
+36,Costa Rica,"10 00 N, 84 00 W",0,Spanish,"51,100",661
+37,Cote d'Ivoire,"8 00 N, 5 00 W",0,French,"322,463",3458
+38,Croatia,"45 10 N, 15 30 E",0,Croatian,"56,594",2237
+39,Cyprus,"35 00 N, 33 00 E",0,Greek,"9,251",156
+40,Czechia,"49 45 N, 15 30 E",1,Czech,"78,867",2046
+41,Denmark,"56 00 N, 10 00 E",0,"Danish,","43,094",140
+42,Djibouti,"11 30 N, 43 00 E",0,French,"23,200",528
+43,Dominica,"15 25 N, 61 20 W",0,English,751,0
+44,Dominican Republic,"19 00 N, 70 40 W",0,Spanish,"48,670",376
+45,Ecuador,"2 00 S, 77 30 W",0,Spanish,"283,561",2237
+46,Egypt,"27 00 N, 30 00 E",0,Arabic,"1,001,450",2612
+47,El Salvador,"13 50 N, 88 55 W",0,Spanish,"21,041",590
+48,Equatorial Guinea,"2 00 N, 10 00 E",0,Spanish,"28,051",528
+49,Estonia,"59 00 N, 26 00 E",0,Estonian,"45,228",657
+50,Ethiopia,"8 00 N, 38 00 E",1,Oromo,"1,104,300",5925
+51,Fiji,"18 00 S, 175 00 E",0,English,"18,274",0
+52,Finland,"64 00 N, 26 00 E",0,Finnish,"338,145",2563
+53,France,"metropolitan France: Western Europe, bordering the Bay of Biscay and English Channel, between Belgium and Spain, southeast of the UK; bordering the Mediterranean Sea, between Italy and Spain; ",0,French,"Caribbean,",Southern
+54,Gabon,"1 00 S, 11 45 E",0,French,"267,667",3261
+55,"Gambia, The","13 28 N, 16 34 W",0,English,"11,300",749
+56,Georgia,"42 00 N, 43 30 E",0,Georgian,"69,700",1814
+57,Germany,"51 00 N, 9 00 E",0,German,"357,022",3694
+58,Ghana,"8 00 N, 2 00 W",0,Asante,"238,533",2420
+59,Greece,"39 00 N, 22 00 E",0,Greek,"131,957",1110
+60,Grenada,"12 07 N, 61 40 W",0,English,344,0
+61,Guatemala,"15 30 N, 90 15 W",0,Spanish,"108,889",1667
+62,Guinea,"11 00 N, 10 00 W",0,French,"245,857",4046
+63,Guinea-Bissau,"12 00 N, 15 00 W",0,Portuguese-based,"36,125",762
+64,Guyana,"5 00 N, 59 00 W",0,English,"214,969",2933
+65,Haiti,"19 00 N, 72 25 W",0,French,"27,750",376
+66,Honduras,"15 00 N, 86 30 W",0,Spanish,"112,090",1575
+67,Hong Kong,"22 15 N, 114 10 E",0,Cantonese,"1,108",33
+68,Hungary,"47 00 N, 20 00 E",1,Hungarian,"93,028",2106
+69,Iceland,"65 00 N, 18 00 W",0,"Icelandic,","103,000",0
+70,India,"20 00 N, 77 00 E",0,Hindi,"3,287,263",13888
+71,Indonesia,"5 00 S, 120 00 E",0,Bahasa,"1,904,569",2958
+72,Iran,"32 00 N, 53 00 E",0,Persian,"1,648,195",5894
+73,Iraq,"33 00 N, 44 00 E",0,Arabic,"438,317",3809
+74,Ireland,"53 00 N, 8 00 W",0,English,"70,273",490
+75,Israel,"31 30 N, 34 45 E",0,Hebrew,"21,937",1068
+76,Italy,"42 50 N, 12 50 E",0,Italian,"301,340",1836.4
+77,Jamaica,"18 15 N, 77 30 W",0,"English,","10,991",0
+78,Japan,"36 00 N, 138 00 E",0,Japanesemajor-language,"377,915",0
+79,Jordan,"31 00 N, 36 00 E",0,Arabic,"89,342",1744
+80,Kazakhstan,"48 00 N, 68 00 E",1,Kazakh,"2,724,900",13364
+81,Kenya,"1 00 N, 38 00 E",0,English,"580,367",3457
+82,Kiribati,"1 25 N, 173 00 E",0,"Gilbertese,",811,0
+83,"Korea, South","37 00 N, 127 30 E",0,"Korean,","99,720",237
+84,Kuwait,"29 30 N, 45 45 E",0,Arabic,"17,818",475
+85,Kyrgyzstan,"41 00 N, 75 00 E",1,Kyrgyz,"199,951",4573
+86,Laos,"18 00 N, 105 00 E",1,Lao,"236,800",5274
+87,Latvia,"57 00 N, 25 00 E",0,Latvian,"64,589",1370
+88,Lebanon,"33 50 N, 35 50 E",0,Arabic,"10,400",484
+89,Lesotho,"29 30 S, 28 30 E",1,Sesotho,"30,355",1106
+90,Liberia,"6 30 N, 9 30 W",0,English,"111,369",1667
+91,Libya,"25 00 N, 17 00 E",0,Arabic,"1,759,540",4339
+92,Lithuania,"56 00 N, 24 00 E",0,Lithuanian,"65,300",1545
+93,Luxembourg,"49 45 N, 6 10 E",1,Luxembourgish,"2,586",327
+94,North Macedonia,"41 50 N, 22 00 E",1,Macedonian,"25,713",838
+95,Madagascar,"20 00 S, 47 00 E",0,Malagasy,"587,041",0
+96,Malawi,"13 30 S, 34 00 E",1,English,"118,484",2857
+97,Malaysia,"2 30 N, 112 30 E",0,Bahasa,"329,847",2742
+98,Maldives,"3 15 N, 73 00 E",0,Dhivehi,298,0
+99,Mali,"17 00 N, 4 00 W",1,French,"1,240,192",7908
+100,Malta,"35 50 N, 14 35 E",0,Maltese,316,0
+101,Mauritania,"20 00 N, 12 00 W",0,Arabic,"1,030,700",5002
+102,Mauritius,"20 17 S, 57 33 E",0,Creole,"2,040",0
+103,Mexico,"23 00 N, 102 00 W",0,Spanish,"1,964,375",4389
+104,Moldova,"47 00 N, 29 00 E",1,Moldovan/Romanian,"33,851",1885
+105,Mongolia,"46 00 N, 105 00 E",1,Mongolian,"1,564,116",8082
+106,Morocco,"28 30 N, 10 00 W",0,Arabic,"716,550",3523.5
+107,Mozambique,"18 15 S, 35 00 E",0,Makhuwa,"799,380",4783
+108,Namibia,"22 00 S, 17 00 E",0,Oshiwambo,"824,292",4220
+109,Nepal,"28 00 N, 84 00 E",1,Nepali,"147,181",3159
+110,Netherlands,"52 31 N, 5 46 E",0,Dutch,"41,543",1053
+111,New Zealand,"41 00 S, 174 00 E",0,English,"268,838",0
+112,Nicaragua,"13 00 N, 85 00 W",0,Spanish,"130,370",1253
+113,Niger,"16 00 N, 8 00 E",1,French,1.267,5834
+114,Nigeria,"10 00 N, 8 00 E",0,English,"923,768",4477
+115,Norway,"62 00 N, 10 00 E",0,Bokmal,"323,802",2566
+116,Oman,"21 00 N, 57 00 E",0,Arabic,"309,500",1561
+117,Pakistan,"30 00 N, 70 00 E",0,Punjabi,"796,095",7257
+118,Panama,"9 00 N, 80 00 W",0,Spanish,"75,420",687
+119,Papua New Guinea,"6 00 S, 147 00 E",0,Tok,"462,840",824
+120,Paraguay,"23 00 S, 58 00 W",1,Spanish,"406,752",4655
+121,Peru,"10 00 S, 76 00 W",0,Spanish,"1,285,216",7062
+122,Philippines,"13 00 N, 122 00 E",0,unspecified,"300,000",0
+123,Poland,"52 00 N, 20 00 E",0,Polish,"312,685",2865
+124,Portugal,"39 30 N, 8 00 W",0,Portuguese,"92,090",1224
+125,Qatar,"25 30 N, 51 15 E",0,Arabic,"11,586",87
+126,Romania,"46 00 N, 25 00 E",0,Romanian,"238,391",2844
+127,Russia,"60 00 N, 100 00 E",0,Russian,"17,098,242",22407
+128,Rwanda,"2 00 S, 30 00 E",1,Kinyarwanda,"26,338",930
+129,Samoa,"13 35 S, 172 20 W",0,Samoan,"2,831",0
+130,Sao Tome and Principe,"1 00 N, 7 00 E",0,Portuguese,964,0
+131,Saudi Arabia,"25 00 N, 45 00 E",0,Arabic,"2,149,690",4272
+132,Senegal,"14 00 N, 14 00 W",0,French,"196,722",2684
+133,Seychelles,"4 35 S, 55 40 E",0,Seychellois,455,0
+134,Sierra Leone,"8 30 N, 11 30 W",0,English,"71,740",1093
+135,Singapore,"1 22 N, 103 48 E",0,English,719,0
+136,Slovakia,"48 40 N, 19 30 E",1,Slovak,"49,035",1587
+137,Slovenia,"46 07 N, 14 49 E",0,Slovene,"20,273",1211
+138,Solomon Islands,"8 00 S, 159 00 E",0,Melanesian,"28,896",0
+139,Somalia,"10 00 N, 49 00 E",0,Somali,"637,657",2385
+140,South Africa,"29 00 S, 24 00 E",0,isiZulu,"1,219,090",5244
+141,Spain,"40 00 N, 4 00 W",0,Castilian,"505,370",1952.7
+142,Sri Lanka,"7 00 N, 81 00 E",0,Sinhala,"65,610",0
+143,Saint Kitts and Nevis,"17 20 N, 62 45 W",0,English,261,0
+144,Saint Lucia,"13 53 N, 60 58 W",0,English,616,0
+145,Saint Vincent and the Grenadines,"13 15 N, 61 12 W",0,"English,",389,0
+146,Sudan,"15 00 N, 30 00 E",0,Arabic,"1,861,484",6819
+147,Suriname,"4 00 N, 56 00 W",0,Dutch,"163,820",1907
+148,Eswatini,"26 30 S, 31 30 E",1,predominantly,"17,364",546
+149,Sweden,"62 00 N, 15 00 E",0,Swedish,"450,295",2211
+150,Switzerland,"47 00 N, 8 00 E",1,German,"41,277",1770
+151,Syria,"35 00 N, 38 00 E",0,Arabic,"187,437",2363
+152,Tajikistan,"39 00 N, 71 00 E",1,Tajik,"144,100",4130
+153,Tanzania,"6 00 S, 35 00 E",0,Kiswahili,"947,300",4161
+154,Thailand,"15 00 N, 100 00 E",0,Thai,"513,120",5673
+155,Togo,"8 00 N, 1 10 E",0,French,"56,785",1880
+156,Tonga,"20 00 S, 175 00 W",0,Tongan,747,0
+157,Trinidad and Tobago,"11 00 N, 61 00 W",0,English,"5,128",0
+158,Tunisia,"34 00 N, 9 00 E",0,Arabic,"163,610",1495
+159,Turkey (Turkiye),"39 00 N, 35 00 E",0,Turkish,"783,562",2816
+160,Turkmenistan,"40 00 N, 60 00 E",1,Turkmen,"488,100",4158
+161,Uganda,"1 00 N, 32 00 E",1,English,"241,038",2729
+162,Ukraine,"49 00 N, 32 00 E",0,Ukrainian,"603,550",5581
+163,United Arab Emirates,"24 00 N, 54 00 E",0,Arabic,"83,600",1066
+164,United Kingdom,"54 00 N, 2 00 W",0,Englishnote:,"243,610",499
+165,United States,"38 00 N, 97 00 W",0,English,"9,833,517",12002
+166,Uruguay,"33 00 S, 56 00 W",0,Spanish,"176,215",1591
+167,Uzbekistan,"41 00 N, 64 00 E",1,Uzbek,"447,400",6893
+168,Vanuatu,"16 00 S, 167 00 E",0,local,"12,189",0
+169,Venezuela,"8 00 N, 66 00 W",0,Spanish,"912,050",5267
+170,Vietnam,"16 10 N, 107 50 E",0,Vietnamese,"331,210",4616
+171,Yemen,"15 00 N, 48 00 E",0,Arabic,"527,968",1601
+172,Zambia,"15 00 S, 30 00 E",1,Bemba,"752,618",6043.15
+173,Zimbabwe,"20 00 S, 30 00 E",1,Shona,"390,757",3229
