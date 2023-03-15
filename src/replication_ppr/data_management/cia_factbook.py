@@ -33,6 +33,7 @@ countries_cia = [s.replace(",", "") for s in countries_cia]
 countries_cia = [s.replace("(", "") for s in countries_cia]
 countries_cia = [s.replace(")", "") for s in countries_cia]
 countries_cia = [s.replace("`", "") for s in countries_cia]
+countries_cia = [s.replace("`", "") for s in countries_cia]
 countries_cia = list(dict.fromkeys(countries_cia))
 
 countries_cia_standard = coco.convert(
@@ -100,4 +101,4 @@ data = pd.DataFrame(d)
 data.loc[~data["landlocked"].str.contains("landlocked", na=False), "landlocked"] = 0
 data.loc[data["landlocked"].str.contains("landlocked", na=False), "landlocked"] = 1
 data["island"] = data["island"].str.replace(",", "")
-data.dtypes
+data.to_csv("../data/cia_factbook.csv")
