@@ -17,7 +17,7 @@ def get_lat_long(country):
 # create dataframe
 
 distance_data = pd.read_csv(
-    "/Users/anzhelikayatsenko/Desktop/MASTERS/epp-2022/final_project/final_project_yatsenko_wachter/src/replication_ppr/data/cia_factbook.csv",
+    "../data/cia_factbook.csv",
 )
 
 
