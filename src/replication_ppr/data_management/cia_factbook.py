@@ -10,7 +10,7 @@ browser.get("https://www.cia.gov/the-world-factbook/countries/")
 element = browser.find_element(By.CLASS_NAME, "pagination__arrow-right")
 countries_cia = []
 for _i in range(1, 23):
-    soup = BeautifulSoup(browser.page_source)
+    soup = BeautifulSoup(browser.page_source, features="html5lib")
     for el in soup.find_all("a", {"class": "inline-link"}):
         countries_cia.append(el.get_text())
     element.click()
