@@ -27,6 +27,7 @@ countries_cia = [
     else x
     for x in countries_cia
 ]
+
 countries_cia = [x.lower() for x in countries_cia]
 countries_cia = [s.replace(" ", "-") for s in countries_cia]
 countries_cia = [s.replace(",", "") for s in countries_cia]
@@ -98,9 +99,22 @@ for country in countries_cia:
     )
 
 data = pd.DataFrame(d)
-data.loc[~data["landlocked"].str.contains("landlocked", na=False), "landlocked"] = 0
-data.loc[data["landlocked"].str.contains("landlocked", na=False), "landlocked"] = 1
-data["island"] = data["island"].str.replace(",", "")
+
 data = data.drop(53)
+
+data["island"] = data["island"].str.replace(",", "")
+data["area"] = data["area"].str.replace(",", "")
+
 data["area"] = pd.to_numeric(data["area"])
+data["island"] = pd.to_numeric(data["island"])
+
+data.loc[~data["landlocked"].str.contains("landlocked", na=False), "landlocked"] = "No"
+data.loc[data["landlocked"].str.contains("landlocked", na=False), "landlocked"] = "Yes"
+
+data.loc[data["island"] != 0, "island"] = "No"
+data.loc[data["island"] == 0, "island"] = "Yes"
+
+data = data.replace(",", "", regex=True)
+
+
 data.to_csv("../data/cia_factbook.csv")
