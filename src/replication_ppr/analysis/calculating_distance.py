@@ -62,3 +62,33 @@ distance_df = pd.DataFrame(
     columns=["Country 1", "Country 2", "Pair ID", "Distance (km)"],
 )
 # print out dataframe
+
+CIA_data = pd.read_csv(
+    "/Users/anzhelikayatsenko/Desktop/MASTERS/epp-2022/final_project/final_project_yatsenko_wachter/src/replication_ppr/data/cia_factbook.csv",
+)
+CIA_data = pd.DataFrame(CIA_data)
+
+merged = pd.merge(
+    distance_df, CIA_data, left_on="Country 1", right_on="country", how="left",
+)
+merged = pd.merge(merged, CIA_data, left_on="Country 2", right_on="country", how="left")
+merged = merged.rename(columns={"area_y": "Country 2 area", "area_x": "Country 1 area"})
+#
+merged = merged.drop(
+    columns=[
+        "country_x",
+        "coordinates_x",
+        "landlocked_x",
+        "language_x",
+        "island_x",
+        "country_y",
+        "coordinates_y",
+        "landlocked_y",
+        "language_y",
+        "island_y",
+        "Unnamed: 0_x",
+        "Unnamed: 0_y",
+    ],
+)
+
+merged["Country 2 area"] = merged["Country 1 area"].str.replace(",", "").astype(float)
