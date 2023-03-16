@@ -33,7 +33,7 @@ countries_cia = [s.replace(",", "") for s in countries_cia]
 countries_cia = [s.replace("(", "") for s in countries_cia]
 countries_cia = [s.replace(")", "") for s in countries_cia]
 countries_cia = [s.replace("`", "") for s in countries_cia]
-countries_cia = [s.replace("`", "") for s in countries_cia]
+countries_cia = [s.replace("’", "") for s in countries_cia]
 countries_cia = list(dict.fromkeys(countries_cia))
 
 countries_cia_standard = coco.convert(
