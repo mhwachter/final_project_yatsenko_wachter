@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 dot = pd.read_csv("../data/DOT_03-08-2023 16-25-54-79_panel.csv")
@@ -47,5 +48,17 @@ dot = (
     .sort_index(axis=1, level=1)
 )
 dot.columns = [f"{a}{b}" for a, b in dot.columns]
+
+dot["trade"] = (
+    (
+        dot["FOB Exports1"]
+        + dot["FOB Exports2"]
+        + dot["CIF Imports1"]
+        + dot["CIF Imports2"]
+    )
+    / 4
+) / dot["CPI1"]
+
+dot["ltrade"] = np.log(dot["trade"])
 
 dot.to_csv("/Users/marcel/Desktop/dot.csv")
