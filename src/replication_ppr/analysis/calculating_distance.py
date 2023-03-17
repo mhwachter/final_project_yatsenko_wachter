@@ -64,12 +64,16 @@ distance_df = pd.DataFrame(
 # print out dataframe
 
 CIA_data = pd.read_csv(
-    "/Users/anzhelikayatsenko/Desktop/MASTERS/epp-2022/final_project/final_project_yatsenko_wachter/src/replication_ppr/data/cia_factbook.csv",
+    "../data/cia_factbook.csv",
 )
 CIA_data = pd.DataFrame(CIA_data)
 
 merged = pd.merge(
-    distance_df, CIA_data, left_on="Country 1", right_on="country", how="left",
+    distance_df,
+    CIA_data,
+    left_on="Country 1",
+    right_on="country",
+    how="left",
 )
 merged = pd.merge(merged, CIA_data, left_on="Country 2", right_on="country", how="left")
 merged = merged.rename(columns={"area_y": "Country 2 area", "area_x": "Country 1 area"})
