@@ -130,7 +130,9 @@ data["ISO3"] = coco.convert(names=data["country"], to="ISO3")
 data["border_countries"] = data["border_countries"].str.replace("\d+", "")
 data["border_countries"] = data["border_countries"].str.replace("km", "")
 data["border_countries"] = data["border_countries"].str.replace(";", ",")
-data["border_countries"] = data["border_countries"].str.replace(" ", "")
+data["border_countries"] = data["border_countries"].str.strip()
+data["border_countries"] = data["border_countries"].str.replace(", ", ",")
+data["border_countries"] = data["border_countries"].str.replace(" ,", ",")
 
 
 data.to_csv("../data/cia_factbook.csv")
