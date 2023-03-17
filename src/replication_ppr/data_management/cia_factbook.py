@@ -1,5 +1,6 @@
 import country_converter as coco
 import pandas as pd
+import numpy as np
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -76,12 +77,14 @@ new = pd.merge(
 new = new.dropna()
 new
 
+new = new.drop(55)
 countries_cia = new.countries_cia.to_list()
 
 coordinates = []
 d = []
 for country in countries_cia:
     url = "https://www.cia.gov/the-world-factbook/countries/" + str(country)
+    print(url)
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
     geography = soup.find("div", attrs={"id": "geography"})
@@ -95,12 +98,18 @@ for country in countries_cia:
             "language": people_society.find_all("p")[3].get_text().split(" ")[0],
             "area": geography.find_all("p")[3].get_text().split(" ")[1],
             "island": geography.find_all("p")[5].text.split(" ")[1],
+            "border_countries": (
+                geography.find_all("p")[5].text.split(": ", 2)[2]
+                if geography.find_all("p")[5].text.split("border", 1)[0]
+                != "total: 0 km"
+                else np.nan
+            ),
         },
     )
 
 data = pd.DataFrame(d)
 
-data = data.drop(53)
+# data = data.drop(53)
 
 data["island"] = data["island"].str.replace(",", "")
 data["area"] = data["area"].str.replace(",", "")
@@ -116,5 +125,61 @@ data.loc[data["island"] == 0, "island"] = "Yes"
 
 data = data.replace(",", "", regex=True)
 
+data["ISO3"] = coco.convert(names=data["country"], to="ISO3")
+
+data["border_countries"] = data["border_countries"].str.replace("\d+", "")
+data["border_countries"] = data["border_countries"].str.replace("km", "")
+data["border_countries"] = data["border_countries"].str.replace(";", ",")
+data["border_countries"] = data["border_countries"].str.replace(" ", "")
+
 
 data.to_csv("../data/cia_factbook.csv")
+
+###################################################################
+url = "https://www.cia.gov/the-world-factbook/countries/austria"
+print(url)
+page = requests.get(url)
+soup = BeautifulSoup(page.content, "html.parser")
+print(soup.find("h1", attrs={"class": "hero-title"}).get_text())
+print(
+    soup.find("div", attrs={"id": "geography"})
+    .find_all("p")[1]
+    .get_text()
+    .replace(", ", ",")
+)
+print(
+    soup.find("div", attrs={"id": "geography"})
+    .find_all("p")[1]
+    .get_text()
+    .split(",", 1)[0]
+)
+print(
+    soup.find("div", attrs={"id": "geography"})
+    .find_all("p")[1]
+    .get_text()
+    .split(",", 1)[1]
+    .strip()
+)
+print(
+    soup.find(
+        "a", attrs={"href": "/the-world-factbook/field/coastline"}
+    ).next_element.next_element.get_text()
+)
+print(
+    soup.find("a", attrs={"href": "/the-world-factbook/field/languages"})
+    .next_element.next_element.get_text()
+    .split(" ", 1)[0]
+)
+geography = soup.find("div", attrs={"id": "geography"})
+government = soup.find("div", attrs={"id": "government"})
+people_society = soup.find("div", attrs={"id": "people-and-society"})
+print(geography.find_all("p")[3].get_text().split(" ")[1])
+print(government.find_all("p")[4].get_text())
+print(geography.find_all("p")[1].get_text())
+print(people_society.find_all("p")[3].get_text().split(" ")[0])
+print(geography.find_all("p")[5].text.split("):", 1))
+print(
+    geography.find_all("p")[5].text.split(": ", 2)[2]
+    if geography.find_all("p")[5].text.split("border", 1)[0] != "total: 0 km"
+    else np.nan
+)

@@ -101,6 +101,7 @@ repos:
     rev: v2.2.2
     hooks:
       - id: codespell
+        exclude: src/replication_ppr/data/cia_factbook.csv
         args:
           - --skip="**.ipynb"
   - repo: https://github.com/asottile/setup-cfg-fmt
