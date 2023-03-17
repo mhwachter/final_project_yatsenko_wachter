@@ -61,4 +61,8 @@ dot["trade"] = (
 
 dot["ltrade"] = np.log(dot["trade"])
 
+dot = dot[dot["trade"].notna()]
+
+dot = dot.reset_index()
+
 dot.to_csv("/Users/marcel/Desktop/dot.csv")
