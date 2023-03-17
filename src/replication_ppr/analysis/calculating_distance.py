@@ -46,7 +46,8 @@ for i in range(len(distance_data)):
                 (distance_data["Latitude"][i], distance_data["Longitude"][i]),
                 (distance_data["Latitude"][j], distance_data["Longitude"][j]),
             ).km
-            d_miles = d_km * 0.621371  # Convert km to miles
+            d_miles = dist_km * 0.621371  # Convert km to miles
+            ldist_km = np.log2(dist_km)
             ldist = np.log2(d_miles)  # Take the logarithmic form
             pair_code = pair_id
             pair_id += 1
@@ -57,6 +58,7 @@ for i in range(len(distance_data)):
                     pair_code,
                     dist_km,
                     d_miles,
+                    ldist_km,
                     ldist,
                 ),
             )
@@ -70,10 +72,12 @@ distance_df = pd.DataFrame(
         "Pair ID",
         "Distance (km)",
         "Distance (miles)",
+        "Log Distance Km",
         "Log Distance Miles",
     ],
 )
 # print out dataframe
+distance_df
 # merginf dataset.
 CIA_data = pd.read_csv(
     "../data/cia_factbook.csv",
@@ -107,4 +111,4 @@ merged = merged.drop(
     ],
 )
 
-merged["Country 2 area"] = merged["Country 1 area"].str.replace(",", "").astype(float)
+merged["larea"] = np.log2(merged["Country 1 area"] * merged["Country 2 area"])
