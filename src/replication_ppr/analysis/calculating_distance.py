@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 from geopy.distance import distance
 from geopy.geocoders import Nominatim
@@ -41,10 +42,12 @@ for i in range(len(distance_data)):
             and distance_data["Latitude"][j] is not None
             and distance_data["Longitude"][j] is not None
         ):
-            d = distance(
+            dist_km = distance(
                 (distance_data["Latitude"][i], distance_data["Longitude"][i]),
                 (distance_data["Latitude"][j], distance_data["Longitude"][j]),
             ).km
+            d_miles = d_km * 0.621371  # Convert km to miles
+            ldist = np.log2(d_miles)  # Take the logarithmic form
             pair_code = pair_id
             pair_id += 1
             distances.append(
@@ -52,17 +55,26 @@ for i in range(len(distance_data)):
                     distance_data["country"][i],
                     distance_data["country"][j],
                     pair_code,
-                    d,
+                    dist_km,
+                    d_miles,
+                    ldist,
                 ),
             )
 
 # create new dataframe with distance values
 distance_df = pd.DataFrame(
     distances,
-    columns=["Country 1", "Country 2", "Pair ID", "Distance (km)"],
+    columns=[
+        "Country 1",
+        "Country 2",
+        "Pair ID",
+        "Distance (km)",
+        "Distance (miles)",
+        "Log Distance Miles",
+    ],
 )
 # print out dataframe
-
+# merginf dataset.
 CIA_data = pd.read_csv(
     "../data/cia_factbook.csv",
 )
