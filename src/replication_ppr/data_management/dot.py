@@ -4,7 +4,7 @@ import pandas as pd
 
 cc = coco.CountryConverter()
 
-dot = pd.read_csv("../data/DOT_03-08-2023 16-25-54-79_panel.csv")
+dot = pd.read_csv("../data/DOT.csv")
 
 dot.columns
 
@@ -41,7 +41,7 @@ dot["countries"] = dot[["Country", "Counterpart Country"]].values.tolist()
 
 dot["pair_id"] = (
     dot.groupby(
-        dot[["Country", "Counterpart Country"]].apply(frozenset, axis=1),
+        dot[["Country Code", "Counterpart Country Code"]].apply(frozenset, axis=1),
     ).ngroup()
     + 1
 )
@@ -87,4 +87,9 @@ dot = dot[dot["ctry2_ISO"].isin(iso3)]
 dot["ctry1"] = cc.pandas_convert(series=dot["ctry1"], to="name_short")
 dot["ctry2"] = cc.pandas_convert(series=dot["ctry2"], to="name_short")
 
-dot.to_csv("/Users/marcel/Desktop/dot.csv")
+dot = dot.reset_index()
+
+dot["check"] = dot.groupby(["pair_id", "Year"]).ngroup()
+dot["check2"] = dot.check.value_counts()
+
+dot["check2"].unique()
