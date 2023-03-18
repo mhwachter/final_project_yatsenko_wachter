@@ -23,10 +23,12 @@ repos:
       - id: debug-statements
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
+        exclude: src/replication_ppr/data/DOT.csv
         types:
           - text
       - id: forbid-submodules
       - id: mixed-line-ending
+        exclude: src/replication_ppr/data/DOT.csv
         args:
           - --fix=lf
         description: Forces to replace line ending by the UNIX 'lf' character.
