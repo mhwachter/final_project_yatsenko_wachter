@@ -1,5 +1,8 @@
+import country_converter as coco
 import numpy as np
 import pandas as pd
+
+cc = coco.CountryConverter()
 
 dot = pd.read_csv("../data/DOT_03-08-2023 16-25-54-79_panel.csv")
 
@@ -70,5 +73,18 @@ dot["ctry1"] = dot["countries1"].str[0]
 dot["ctry2"] = dot["countries1"].str[1]
 
 dot = dot[["pair_id", "Year", "ctry1", "ctry2", "trade", "ltrade"]]
+
+dot["ctry1_ISO"] = cc.pandas_convert(series=dot["ctry1"], to="ISO3")
+dot["ctry2_ISO"] = cc.pandas_convert(series=dot["ctry2"], to="ISO3")
+
+countries_list = pd.read_csv("../data/countries_list.csv")
+countries_list = countries_list.drop(175)
+iso3 = countries_list["ISO3"].to_list()
+
+dot = dot[dot["ctry1_ISO"].isin(iso3)]
+dot = dot[dot["ctry2_ISO"].isin(iso3)]
+
+dot["ctry1"] = cc.pandas_convert(series=dot["ctry1"], to="name_short")
+dot["ctry2"] = cc.pandas_convert(series=dot["ctry2"], to="name_short")
 
 dot.to_csv("/Users/marcel/Desktop/dot.csv")

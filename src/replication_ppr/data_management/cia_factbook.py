@@ -45,7 +45,7 @@ countries_cia_standard = coco.convert(
 )
 
 countries_list = pd.read_csv(
-    "/Users/marcel/sciebo/Uni/MSc/3rd/EPP/epp-2022/final_project/final_project_yatsenko_wachter/src/replication_ppr/data/countries_list.csv",
+    "../data/countries_list.csv",
 )
 
 countries_list = countries_list["country"].to_list()
