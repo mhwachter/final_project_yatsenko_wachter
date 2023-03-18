@@ -108,7 +108,7 @@ merged = merged.drop(
         "island_y",
         "Unnamed: 0_x",
         "Unnamed: 0_y",
-        'Unnamed: 0',
+        "Unnamed: 0",
     ],
 )
 
