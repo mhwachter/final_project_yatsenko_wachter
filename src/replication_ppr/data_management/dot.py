@@ -34,6 +34,8 @@ dot = dot.rename(
     },
 )
 
+dot["countries"] = dot[["Country", "Counterpart Country"]].values.tolist()
+
 dot["pair_id"] = (
     dot.groupby(
         dot[["Country", "Counterpart Country"]].apply(frozenset, axis=1),
@@ -50,19 +52,23 @@ dot = (
 dot.columns = [f"{a}{b}" for a, b in dot.columns]
 
 dot["trade"] = (
-    (
-        dot["FOB Exports1"]
-        + dot["FOB Exports2"]
-        + dot["CIF Imports1"]
-        + dot["CIF Imports2"]
+    dot.loc[:, ["FOB Exports1", "FOB Exports2", "CIF Imports1", "CIF Imports2"]].mean(
+        axis=1,
     )
-    / 4
-) / dot["CPI1"]
+    / dot["CPI1"]
+)
 
 dot["ltrade"] = np.log(dot["trade"])
 
 dot = dot[dot["trade"].notna()]
 
 dot = dot.reset_index()
+
+dot = dot[["pair_id", "Year", "countries1", "trade", "ltrade"]]
+
+dot["ctry1"] = dot["countries1"].str[0]
+dot["ctry2"] = dot["countries1"].str[1]
+
+dot = dot[["pair_id", "Year", "ctry1", "ctry2", "trade", "ltrade"]]
 
 dot.to_csv("/Users/marcel/Desktop/dot.csv")
