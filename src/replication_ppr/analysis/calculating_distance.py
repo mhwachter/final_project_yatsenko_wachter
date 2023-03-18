@@ -47,8 +47,8 @@ for i in range(len(distance_data)):
                 (distance_data["Latitude"][j], distance_data["Longitude"][j]),
             ).km
             d_miles = dist_km * 0.621371  # Convert km to miles
-            ldist_km = np.log2(dist_km)
-            ldist = np.log2(d_miles)  # Take the logarithmic form
+            ldist_km = np.log(dist_km)
+            ldist = np.log(d_miles)  # Take the logarithmic form
             pair_code = pair_id
             pair_id += 1
             distances.append(
@@ -108,7 +108,8 @@ merged = merged.drop(
         "island_y",
         "Unnamed: 0_x",
         "Unnamed: 0_y",
+        'Unnamed: 0',
     ],
 )
 
-merged["larea"] = np.log2(merged["Country 1 area"] * merged["Country 2 area"])
+merged["larea"] = np.log(merged["Country 1 area"] * merged["Country 2 area"])
