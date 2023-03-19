@@ -32,85 +32,54 @@ dot = dot.rename(
         "Goods, Value of Imports, Cost, Insurance, Freight (CIF), US Dollars (TMG_CIF_USD)": "CIF Imports",
         "Value": "CPI",
         "Time Period": "Year",
-        "Country Name": "Country",
-        "Counterpart Country Name": "Counterpart Country",
+        "Country Name": "ctry1",
+        "Counterpart Country Name": "ctry2",
+        "Country Code": "ctry1_code",
+        "Counterpart Country Code": "ctry2_code",
     },
 )
 
-dot["countries"] = dot[["Country", "Counterpart Country"]].values.tolist()
 
 dot["pair_id"] = (
     dot.groupby(
-        dot[["Country Code", "Counterpart Country Code"]].apply(frozenset, axis=1),
+        dot[["ctry1_code", "ctry2_code"]].apply(frozenset, axis=1),
     ).ngroup()
     + 1
 )
 
-dot2 = dot.groupby(["pair_id", "Year"]).agg(
+dot = dot.groupby(["pair_id", "Year"]).agg(
     {
-        "Country": "last",
-        "Country Code": "last",
-        "Counterpart Country": "last",
-        "Counterpart Country Code": "last",
+        "ctry1": "last",
+        "ctry1_code": "last",
+        "ctry2": "last",
+        "ctry2_code": "last",
         "Year": "last",
         "FOB Exports": "mean",
         "CIF Imports": "mean",
         "CPI": "last",
-        "countries": "last",
         "pair_id": "last",
     },
 )
 
-dot2 = dot2.drop_duplicates(["pair_id", "Year"])
+dot = dot.drop_duplicates(["pair_id", "Year"])
 
-g = dot.groupby(["pair_id", "Year"]).cumcount().add(1)
-dot = (
-    dot.set_index(["pair_id", "Year", g])
-    .unstack(fill_value=0)
-    .sort_index(axis=1, level=1)
-)
-dot.columns = [f"{a}{b}" for a, b in dot.columns]
-
-dot["trade"] = (
-    dot.loc[:, ["FOB Exports1", "FOB Exports2", "CIF Imports1", "CIF Imports2"]].mean(
-        axis=1,
-    )
-    / dot["CPI1"]
-)
-
-dot2["trade"] = (dot2.loc[:, ["FOB Exports", "CIF Imports"]].mean(axis=1)) / dot2["CPI"]
-
-dot2["ltrade"] = np.log(dot2["trade"])
+dot["trade"] = (dot.loc[:, ["FOB Exports", "CIF Imports"]].mean(axis=1)) / dot["CPI"]
 
 dot["ltrade"] = np.log(dot["trade"])
 
 dot = dot[dot["trade"].notna()]
 
-dot = dot.reset_index()
-
-dot = dot[["pair_id", "Year", "countries1", "trade", "ltrade"]]
-
-dot["ctry1"] = dot["countries1"].str[0]
-dot["ctry2"] = dot["countries1"].str[1]
-
 dot = dot[["pair_id", "Year", "ctry1", "ctry2", "trade", "ltrade"]]
 
-dot["ctry1_ISO"] = cc.pandas_convert(series=dot["ctry1"], to="ISO3")
-dot["ctry2_ISO"] = cc.pandas_convert(series=dot["ctry2"], to="ISO3")
+dot["ctry1_ISO3"] = cc.pandas_convert(series=dot["ctry1"], to="ISO3")
+dot["ctry2_ISO3"] = cc.pandas_convert(series=dot["ctry2"], to="ISO3")
 
 countries_list = pd.read_csv("../data/countries_list.csv")
 countries_list = countries_list.drop(175)
 iso3 = countries_list["ISO3"].to_list()
 
-dot = dot[dot["ctry1_ISO"].isin(iso3)]
-dot = dot[dot["ctry2_ISO"].isin(iso3)]
+dot = dot[dot["ctry1_ISO3"].isin(iso3)]
+dot = dot[dot["ctry2_ISO3"].isin(iso3)]
 
 dot["ctry1"] = cc.pandas_convert(series=dot["ctry1"], to="name_short")
 dot["ctry2"] = cc.pandas_convert(series=dot["ctry2"], to="name_short")
-
-dot = dot.reset_index()
-
-dot["check"] = dot.groupby(["pair_id", "Year"]).ngroup()
-dot["check2"] = dot.check.value_counts()
-
-dot["check2"].unique()
