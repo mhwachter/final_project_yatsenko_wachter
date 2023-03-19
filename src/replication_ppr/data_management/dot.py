@@ -46,6 +46,23 @@ dot["pair_id"] = (
     + 1
 )
 
+dot2 = dot.groupby(["pair_id", "Year"]).agg(
+    {
+        "Country": "last",
+        "Country Code": "last",
+        "Counterpart Country": "last",
+        "Counterpart Country Code": "last",
+        "Year": "last",
+        "FOB Exports": "mean",
+        "CIF Imports": "mean",
+        "CPI": "last",
+        "countries": "last",
+        "pair_id": "last",
+    },
+)
+
+dot2 = dot2.drop_duplicates(["pair_id", "Year"])
+
 g = dot.groupby(["pair_id", "Year"]).cumcount().add(1)
 dot = (
     dot.set_index(["pair_id", "Year", g])
@@ -60,6 +77,10 @@ dot["trade"] = (
     )
     / dot["CPI1"]
 )
+
+dot2["trade"] = (dot2.loc[:, ["FOB Exports", "CIF Imports"]].mean(axis=1)) / dot2["CPI"]
+
+dot2["ltrade"] = np.log(dot2["trade"])
 
 dot["ltrade"] = np.log(dot["trade"])
 
