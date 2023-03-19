@@ -83,3 +83,9 @@ dot = dot[dot["ctry2_ISO3"].isin(iso3)]
 
 dot["ctry1"] = cc.pandas_convert(series=dot["ctry1"], to="name_short")
 dot["ctry2"] = cc.pandas_convert(series=dot["ctry2"], to="name_short")
+
+dot["countries"] = dot[["ctry1", "ctry2"]].values.tolist()
+dot["countries"] = dot["countries"].sort_values().apply(lambda x: sorted(x))
+
+dot["ctry1"] = dot["countries"].str[0]
+dot["ctry2"] = dot["countries"].str[1]
