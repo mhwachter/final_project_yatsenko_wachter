@@ -89,3 +89,5 @@ dot["countries"] = dot["countries"].sort_values().apply(lambda x: sorted(x))
 
 dot["ctry1"] = dot["countries"].str[0]
 dot["ctry2"] = dot["countries"].str[1]
+
+dot.to_csv("../../../bld/python/data/dot_final.csv")

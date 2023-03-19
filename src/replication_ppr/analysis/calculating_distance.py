@@ -112,3 +112,5 @@ merged = merged.drop(
 )
 
 merged["larea"] = np.log(merged["Country 1 area"] * merged["Country 2 area"])
+
+merged.to_csv("../../../bld/python/data/cia_distance.csv")
