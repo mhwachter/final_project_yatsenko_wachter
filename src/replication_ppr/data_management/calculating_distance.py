@@ -113,4 +113,37 @@ merged = merged.drop(
 
 merged["larea"] = np.log(merged["Country 1 area"] * merged["Country 2 area"])
 
+# WorldBank Regional data
+wb_reg_data = pd.read_csv(
+    "/Users/anzhelikayatsenko/Desktop/MASTERS/epp-2022/final_project/final_project_yatsenko_wachter/src/replication_ppr/data/data-XHzgJ.csv",
+)
+wb_reg_data = wb_reg_data[["Country", "Income group", "Region"]]
+wb_reg_data = pd.DataFrame(wb_reg_data)
+region_dummies = pd.get_dummies(wb_reg_data["Region"])
+income_dummies = pd.get_dummies(wb_reg_data["Income group"])
+wb_reg_data = pd.concat([wb_reg_data, region_dummies, income_dummies], axis=1)
+
+Data_region_dis_1 = pd.merge(
+    merged,
+    wb_reg_data,
+    left_on="Country 1",
+    right_on="Country",
+    how="left",
+)
+
+Data_region_dis_1 = pd.merge(
+    final,
+    wb_reg_data,
+    left_on="Country 2",
+    right_on="Country",
+    how="left",
+)
+
+Data_region_dis_1 = Data_region_dis_1.drop(
+    columns=[
+        "Country_x",
+        "Country_y",
+    ],
+)
+
 merged.to_csv("../../../bld/python/data/cia_distance.csv")
