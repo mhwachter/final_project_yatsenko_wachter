@@ -6,7 +6,9 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-browser = webdriver.Firefox()  # open a browser
+cc = coco.CountryConverter()
+
+browser = webdriver.Firefox()
 browser.get("https://www.cia.gov/the-world-factbook/countries/")
 element = browser.find_element(By.CLASS_NAME, "pagination__arrow-right")
 countries_cia = []
@@ -125,7 +127,7 @@ data.loc[data["island"] == 0, "island"] = "Yes"
 
 data = data.replace(",", "", regex=True)
 
-data["ISO3"] = coco.convert(names=data["country"], to="ISO3")
+data["ISO3"] = cc.pandas_convert(series=data["country"], to="ISO3")
 
 data["border_countries"] = data["border_countries"].str.replace("\d+", "")
 data["border_countries"] = data["border_countries"].str.replace("km", "")
@@ -134,11 +136,16 @@ data["border_countries"] = data["border_countries"].str.strip()
 data["border_countries"] = data["border_countries"].str.replace(", ", ",")
 data["border_countries"] = data["border_countries"].str.replace(" ,", ",")
 
+# data["border_countries"] = data["border_countries"].str.split(",")
+
+data["border_countries"] = cc.pandas_convert(
+    series=data["border_countries"], to="ISO3", not_found=None
+)
 
 data.to_csv("../data/cia_factbook.csv")
 
 ###################################################################
-url = "https://www.cia.gov/the-world-factbook/countries/austria"
+url = "https://www.cia.gov/the-world-factbook/countries/japan"
 print(url)
 page = requests.get(url)
 soup = BeautifulSoup(page.content, "html.parser")
