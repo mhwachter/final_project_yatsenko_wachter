@@ -26,4 +26,4 @@ bld/
 *.synctex.gz
 
 #data sets
-src/replication_ppr/data/rta.csv
+rta.csv
