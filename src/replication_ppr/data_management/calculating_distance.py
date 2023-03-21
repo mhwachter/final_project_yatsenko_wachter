@@ -106,13 +106,12 @@ merged = merged.drop(
         "landlocked_y",
         "language_y",
         "island_y",
-        "Unnamed: 0_x",
-        "Unnamed: 0_y",
     ],
 )
 
 merged["larea"] = np.log(merged["Country 1 area"] * merged["Country 2 area"])
-
+merged = merged.assign(pair_id=list(map(frozenset, zip(merged.ISO3_x, merged.ISO3_y))))
+merged.to_csv("../../../bld/python/data/cia_distance.csv")
 # WorldBank Regional data
 wb_reg_data = pd.read_csv(
     "../data/data-XHzgJ.csv",
@@ -123,6 +122,7 @@ region_dummies = pd.get_dummies(wb_reg_data["Region"])
 income_dummies = pd.get_dummies(wb_reg_data["Income group"])
 wb_reg_data = pd.concat([wb_reg_data, region_dummies, income_dummies], axis=1)
 
+
 Data_region_dis_1 = pd.merge(
     merged,
     wb_reg_data,
@@ -131,13 +131,12 @@ Data_region_dis_1 = pd.merge(
     how="left",
 )
 
-#     final,
-#     wb_reg_data,
+Data_region_dis_1 = pd.merge(
+    Data_region_dis_1,
+    wb_reg_data,
+    left_on="Country 2",
+    right_on="Country",
+    how="left",
+)
 
-#         "Country_x",
-#         "Country_y",
-#     ],
-
-merged = merged.assign(pair_id=list(map(frozenset, zip(merged.ISO3_x, merged.ISO3_y))))
-
-merged.to_csv("../../../bld/python/data/cia_distance.csv")
+merged.to_csv("../../../bld/python/data/Data_region_dis_1.csv")
