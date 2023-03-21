@@ -155,14 +155,11 @@ data = data.replace(",", "", regex=True)
 
 data["ISO3"] = cc.pandas_convert(series=data["country"], to="ISO3")
 
-data["border_countries"] = data["border_countries"].str.replace("\d+", "")
-data["border_countries"] = data["border_countries"].str.replace("km", "")
-data["border_countries"] = data["border_countries"].str.replace(";", ",")
-data["border_countries"] = data["border_countries"].str.strip()
-data["border_countries"] = data["border_countries"].str.replace(", ", ",")
-data["border_countries"] = data["border_countries"].str.replace(" ,", ",")
+data["border_countries"] = data["border_countries"].replace(
+    {"\d+": "", "km": "", ";": ",", ", ": ",", " ,": ","}, regex=True
+)
 
-# data["border_countries"] = data["border_countries"].str.split(",")
+data["border_countries"] = data["border_countries"].str.strip()
 
 data["border_countries"] = cc.pandas_convert(
     series=data["border_countries"], to="ISO3", not_found=None
