@@ -1,179 +1,179 @@
-,country,ISO3
-0,Albania,ALB
-1,Algeria,DZA
-2,Angola,AGO
-3,Antigua and Barbuda,ATG
-4,Argentina,ARG
-5,Armenia,ARM
-6,Australia,AUS
-7,Austria,AUT
-8,Azerbaijan,AZE
-9,Bahamas,BHS
-10,Bahrain,BHR
-11,Bangladesh,BGD
-12,Barbados,BRB
-13,Belarus,BLR
-14,Belgium,BEL
-15,Belize,BLZ
-16,Benin,BEN
-17,Bermuda,BMU
-18,Bhutan,BTN
-19,Bolivia,BOL
-20,Botswana,BWA
-21,Brazil,BRA
-22,Bulgaria,BGR
-23,Burkina Faso,BFA
-24,Burma (Myanmar),MMR
-25,Burundi,BDI
-26,Cambodia,KHM
-27,Cameroon,CMR
-28,Canada,CAN
-29,Cape Verde,CPV
-30,Central African Rep.,CAF
-31,Chad,TCD
-32,Chile,CHL
-33,China,CHN
-34,Colombia,COL
-35,Comoros,COM
-36,Congo Dem. Rep. of  (Zaire),COD
-37,Congo Rep.,COG
-38,Costa Rica,CRI
-39,Cote D'Ivoire  (Ivory Coast),CIV
-40,Croatia,HRV
-41,Cyprus,CYP
-42,Czech Republic,CZE
-43,Denmark,DNK
-44,Djibouti,DJI
-45,Dominica,DMA
-46,Dominican Rep.,DOM
-47,Ecuador,ECU
-48,Egypt,EGY
-49,El Salvador,SLV
-50,Equatorial Guinea,GNQ
-51,Estonia,EST
-52,Ethiopia,ETH
-53,Fiji,FJI
-54,Finland,FIN
-55,France,FRA
-56,Gabon,GAB
-57,Gambia,GMB
-58,Georgia,GEO
-59,Germany,DEU
-60,Ghana,GHA
-61,Greece,GRC
-62,Grenada,GRD
-63,Guatemala,GTM
-64,Guinea,GIN
-65,Guinea-Bissau,GNB
-66,Guyana,GUY
-67,Haiti,HTI
-68,Honduras,HND
-69,Hong Kong,HKG
-70,Hungary,HUN
-71,Iceland,ISL
-72,India,IND
-73,Indonesia,IDN
-74,Iran,IRN
-75,Iraq,IRQ
-76,Ireland,IRL
-77,Israel,ISR
-78,Italy,ITA
-79,Jamaica,JAM
-80,Japan,JPN
-81,Jordan,JOR
-82,Kazakhstan,KAZ
-83,Kenya,KEN
-84,Kiribati,KIR
-85,Korea South (R),KOR
-86,Kuwait,KWT
-87,Kyrgyz Republic,KGZ
-88,Lao People's Dem. Rep.,LAO
-89,Latvia,LVA
-90,Lebanon,LBN
-91,Lesotho,LSO
-92,Liberia,LBR
-93,Libya,LBY
-94,Lithuania,LTU
-95,Luxembourg,LUX
-96,Macedonia,MKD
-97,Madagascar,MDG
-98,Malawi,MWI
-99,Malaysia,MYS
-100,Maldives,MDV
-101,Mali,MLI
-102,Malta,MLT
-103,Mauritania,MRT
-104,Mauritius,MUS
-105,Mexico,MEX
-106,Moldova,MDA
-107,Mongolia,MNG
-108,Morocco,MAR
-109,Mozambique,MOZ
-110,Namibia,NAM
-111,Nepal,NPL
-112,Netherlands,NLD
-113,New Zealand,NZL
-114,Nicaragua,NIC
-115,Niger,NER
-116,Nigeria,NGA
-117,Norway,NOR
-118,Oman,OMN
-119,Pakistan,PAK
-120,Panama,PAN
-121,Papua N. Guinea,PNG
-122,Paraguay,PRY
-123,Peru,PER
-124,Philippines,PHL
-125,Poland,POL
-126,Portugal,PRT
-127,Qatar,QAT
-128,Reunion,REU
-129,Romania,ROU
-130,Russia,RUS
-131,Rwanda,RWA
-132,Samoa,WSM
-133,Sao Tome & Principe,STP
-134,Saudi Arabia,SAU
-135,Senegal,SEN
-136,Seychelles,SYC
-137,Sierra Leone,SLE
-138,Singapore,SGP
-139,Slovak Republic,SVK
-140,Slovenia,SVN
-141,Solomon Islands,SLB
-142,Somalia,SOM
-143,South Africa,ZAF
-144,Spain,ESP
-145,Sri Lanka,LKA
-146,St. Kitts & Nevis,KNA
-147,St. Lucia,LCA
-148,St. Vincent & Gren.,VCT
-149,Sudan,SDN
-150,Suriname,SUR
-151,Swaziland,SWZ
-152,Sweden,SWE
-153,Switzerland,CHE
-154,Syria,SYR
-155,Tajikistan,TJK
-156,Tanzania,TZA
-157,Thailand,THA
-158,Togo,TGO
-159,Tonga,TON
-160,Trinidad & Tobago,TTO
-161,Tunisia,TUN
-162,Turkey,TUR
-163,Turkmenistan,TKM
-164,Uganda,UGA
-165,Ukraine,UKR
-166,United Arab Emirates,ARE
-167,United Kingdom,GBR
-168,United States,USA
-169,Uruguay,URY
-170,Uzbekistan,UZB
-171,Vanuatu,VUT
-172,Venezuela,VEN
-173,Vietnam,VNM
-174,Yemen Republic of,YEM
-175,Yugoslavia Socialist Fed. R.,YUG
-176,Zambia,ZMB
-177,Zimbabwe,ZWE
+country,ISO3
+Albania,ALB
+Algeria,DZA
+Angola,AGO
+Antigua and Barbuda,ATG
+Argentina,ARG
+Armenia,ARM
+Australia,AUS
+Austria,AUT
+Azerbaijan,AZE
+Bahamas,BHS
+Bahrain,BHR
+Bangladesh,BGD
+Barbados,BRB
+Belarus,BLR
+Belgium,BEL
+Belize,BLZ
+Benin,BEN
+Bermuda,BMU
+Bhutan,BTN
+Bolivia,BOL
+Botswana,BWA
+Brazil,BRA
+Bulgaria,BGR
+Burkina Faso,BFA
+Burma (Myanmar),MMR
+Burundi,BDI
+Cambodia,KHM
+Cameroon,CMR
+Canada,CAN
+Cape Verde,CPV
+Central African Rep.,CAF
+Chad,TCD
+Chile,CHL
+China,CHN
+Colombia,COL
+Comoros,COM
+Congo Dem. Rep. of  (Zaire),COD
+Congo Rep.,COG
+Costa Rica,CRI
+Cote D'Ivoire  (Ivory Coast),CIV
+Croatia,HRV
+Cyprus,CYP
+Czech Republic,CZE
+Denmark,DNK
+Djibouti,DJI
+Dominica,DMA
+Dominican Rep.,DOM
+Ecuador,ECU
+Egypt,EGY
+El Salvador,SLV
+Equatorial Guinea,GNQ
+Estonia,EST
+Ethiopia,ETH
+Fiji,FJI
+Finland,FIN
+France,FRA
+Gabon,GAB
+Gambia,GMB
+Georgia,GEO
+Germany,DEU
+Ghana,GHA
+Greece,GRC
+Grenada,GRD
+Guatemala,GTM
+Guinea,GIN
+Guinea-Bissau,GNB
+Guyana,GUY
+Haiti,HTI
+Honduras,HND
+Hong Kong,HKG
+Hungary,HUN
+Iceland,ISL
+India,IND
+Indonesia,IDN
+Iran,IRN
+Iraq,IRQ
+Ireland,IRL
+Israel,ISR
+Italy,ITA
+Jamaica,JAM
+Japan,JPN
+Jordan,JOR
+Kazakhstan,KAZ
+Kenya,KEN
+Kiribati,KIR
+Korea South (R),KOR
+Kuwait,KWT
+Kyrgyz Republic,KGZ
+Lao People's Dem. Rep.,LAO
+Latvia,LVA
+Lebanon,LBN
+Lesotho,LSO
+Liberia,LBR
+Libya,LBY
+Lithuania,LTU
+Luxembourg,LUX
+Macedonia,MKD
+Madagascar,MDG
+Malawi,MWI
+Malaysia,MYS
+Maldives,MDV
+Mali,MLI
+Malta,MLT
+Mauritania,MRT
+Mauritius,MUS
+Mexico,MEX
+Moldova,MDA
+Mongolia,MNG
+Morocco,MAR
+Mozambique,MOZ
+Namibia,NAM
+Nepal,NPL
+Netherlands,NLD
+New Zealand,NZL
+Nicaragua,NIC
+Niger,NER
+Nigeria,NGA
+Norway,NOR
+Oman,OMN
+Pakistan,PAK
+Panama,PAN
+Papua N. Guinea,PNG
+Paraguay,PRY
+Peru,PER
+Philippines,PHL
+Poland,POL
+Portugal,PRT
+Qatar,QAT
+Reunion,REU
+Romania,ROU
+Russia,RUS
+Rwanda,RWA
+Samoa,WSM
+Sao Tome & Principe,STP
+Saudi Arabia,SAU
+Senegal,SEN
+Seychelles,SYC
+Sierra Leone,SLE
+Singapore,SGP
+Slovak Republic,SVK
+Slovenia,SVN
+Solomon Islands,SLB
+Somalia,SOM
+South Africa,ZAF
+Spain,ESP
+Sri Lanka,LKA
+St. Kitts & Nevis,KNA
+St. Lucia,LCA
+St. Vincent & Gren.,VCT
+Sudan,SDN
+Suriname,SUR
+Swaziland,SWZ
+Sweden,SWE
+Switzerland,CHE
+Syria,SYR
+Tajikistan,TJK
+Tanzania,TZA
+Thailand,THA
+Togo,TGO
+Tonga,TON
+Trinidad & Tobago,TTO
+Tunisia,TUN
+Turkey,TUR
+Turkmenistan,TKM
+Uganda,UGA
+Ukraine,UKR
+United Arab Emirates,ARE
+United Kingdom,GBR
+United States,USA
+Uruguay,URY
+Uzbekistan,UZB
+Vanuatu,VUT
+Venezuela,VEN
+Vietnam,VNM
+Yemen Republic of,YEM
+Yugoslavia Socialist Fed. R.,YUG
+Zambia,ZMB
+Zimbabwe,ZWE
