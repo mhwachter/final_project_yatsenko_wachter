@@ -139,4 +139,4 @@ Data_region_dis_1 = pd.merge(
     how="left",
 )
 
-merged.to_csv("../../../bld/python/data/Data_region_dis_1.csv")
+Data_region_dis_1.to_csv("../../../bld/python/data/cia_distance.csv")
