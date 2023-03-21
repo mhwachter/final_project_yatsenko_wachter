@@ -95,6 +95,20 @@ dot = dot.assign(
     pair_year_id=list(map(frozenset, zip(dot.ctry1_ISO3, dot.ctry2_ISO3, dot.Year))),
 )
 
+dot = dot[
+    [
+        "pair_id",
+        "pair_year_id",
+        "Year",
+        "ctry1",
+        "ctry2",
+        "ctry1_ISO3",
+        "ctry2_ISO3",
+        "trade",
+        "ltrade",
+    ]
+]
+
 dot = dot.reset_index(drop=True)
 
-dot.to_csv("../../../bld/python/data/dot_final.csv")
+dot.to_csv("../../../bld/python/data/dot_final.csv", index=False)

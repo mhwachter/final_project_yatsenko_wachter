@@ -137,8 +137,6 @@ for country in countries_cia["country"]:
 
 data = pd.DataFrame(d)
 
-# data = data.drop(53)
-
 data["island"] = data["island"].str.replace(",", "")
 data["area"] = data["area"].str.replace(",", "")
 
@@ -165,4 +163,6 @@ data["border_countries"] = cc.pandas_convert(
     series=data["border_countries"], to="ISO3", not_found=None
 )
 
-data.to_csv("../data/cia_factbook.csv")
+data = data.reset_index(drop=True)
+
+data.to_csv("../data/cia_factbook.csv", index=False)

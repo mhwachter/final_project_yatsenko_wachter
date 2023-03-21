@@ -139,4 +139,5 @@ Data_region_dis_1 = pd.merge(
 #     ],
 
 merged = merged.assign(pair_id=list(map(frozenset, zip(merged.ISO3_x, merged.ISO3_y))))
+
 merged.to_csv("../../../bld/python/data/cia_distance.csv")
