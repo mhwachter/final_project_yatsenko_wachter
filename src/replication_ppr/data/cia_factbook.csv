@@ -1,0 +1,175 @@
+,country,coordinates,landlocked,language,area,island,border_countries,ISO3
+0,Albania,41 00 N 20 00 E,No,Albanian,28748.0,No,"['GRC', 'XKX', 'MKD', 'MNE']",ALB
+1,Algeria,28 00 N 3 00 E,No,Arabic,2381740.0,No,"['LBY', 'MLI', 'MRT', 'MAR', 'NER', 'TUN']",DZA
+2,Angola,12 30 S 18 30 E,No,Portuguese,1246700.0,No,"['COD', 'NAM', 'ZMB']",AGO
+3,Antigua and Barbuda,17 03 N 61 48 W,No,English,443.0,Yes,nan,ATG
+4,Argentina,34 00 S 64 00 W,No,Spanish,2780400.0,No,"['BOL', 'BRA', 'CHL', 'PRY', 'URY']",ARG
+5,Armenia,40 00 N 45 00 E,Yes,Armenian,29743.0,No,"['AZE', 'GEO', 'IRN', 'TUR']",ARM
+6,Australia,27 00 S 133 00 E,No,English,7741220.0,Yes,nan,AUS
+7,Austria,47 20 N 13 20 E,Yes,German,83871.0,No,"['CZE', 'DEU', 'HUN', 'ITA', 'LIE', 'SVN', 'CHE']",AUT
+8,Azerbaijan,40 30 N 47 30 E,Yes,Azerbaijani,86600.0,No,"['ARM', 'IRN', 'RUS', 'TUR']",AZE
+9,Bahamas The,24 15 N 76 00 W,No,English,13880.0,Yes,nan,BHS
+10,Bahrain,26 00 N 50 33 E,No,Arabic,760.0,Yes,nan,BHR
+11,Bangladesh,24 00 N 90 00 E,No,Bangla,148460.0,No,"['IND', 'MMR']",BGD
+12,Barbados,13 10 N 59 32 W,No,English,430.0,Yes,nan,BRB
+13,Belarus,53 00 N 28 00 E,Yes,Russian,207600.0,No,"['LVA', 'LTU', 'POL', 'RUS', 'UKR']",BLR
+14,Belgium,50 50 N 4 00 E,No,Dutch,30528.0,No,"['FRA', 'DEU', 'LUX', 'NLD']",BEL
+15,Belize,17 15 N 88 45 W,No,English,22966.0,No,"['GTM', 'MEX']",BLZ
+16,Benin,9 30 N 2 15 E,No,55,112622.0,No,"['BFA', 'NER', 'NGA', 'TGO']",BEN
+17,Bermuda,32 20 N 64 45 W,No,English,54.0,Yes,nan,BMU
+18,Bhutan,27 30 N 90 30 E,Yes,Sharchopkha,38394.0,No,"['CHN', 'IND']",BTN
+19,Bolivia,17 00 S 65 00 W,Yes,Spanish,1098581.0,No,"['ARG', 'BRA', 'CHL', 'PRY', 'PER']",BOL
+20,Botswana,22 00 S 24 00 E,Yes,Setswana,581730.0,No,"['NAM', 'ZAF', 'ZMB', 'ZWE']",BWA
+21,Brazil,10 00 S 55 00 W,No,Portuguese,8515770.0,No,"['ARG', 'BOL', 'COL', 'GUF', 'GUY', 'PRY', 'PER', 'SUR', 'URY', 'VEN']",BRA
+22,Bulgaria,43 00 N 25 00 E,No,Bulgarian,110879.0,No,"['GRC', 'MKD', 'ROU', 'SRB', 'TUR']",BGR
+23,Burkina Faso,13 00 N 2 00 W,Yes,Mossi,274200.0,No,"['BEN', 'CIV', 'GHA', 'MLI', 'NER', 'TGO']",BFA
+24,Burma,22 00 N 98 00 E,No,Burmese,676578.0,No,"['BGD', 'CHN', 'IND', 'LAO', 'THA']",MMR
+25,Burundi,3 30 S 30 00 E,Yes,Kirundi,27830.0,No,"['COD', 'RWA', 'TZA']",BDI
+26,Cambodia,13 00 N 105 00 E,No,Khmer,181035.0,No,"['LAO', 'THA', 'VNM']",KHM
+27,Cameroon,6 00 N 12 00 E,No,24,475440.0,No,"['CAF', 'TCD', 'GNQ', 'GAB', 'NGA']",CMR
+28,Canada,60 00 N 95 00 W,No,English,9984670.0,No,CAN,CAN
+29,Central African Republic,7 00 N 21 00 E,Yes,French,622984.0,No,"['CMR', 'TCD', 'COD', 'SSD']",CAF
+30,Chad,15 00 N 19 00 E,Yes,French,1.284,No,"['CMR', 'CAF', 'LBY', 'NER', 'NGA', 'SDN']",TCD
+31,Chile,30 00 S 71 00 W,No,Spanish,756102.0,No,"['ARG', 'BOL', 'PER']",CHL
+32,China,35 00 N 105 00 E,No,Standard,9596960.0,No,"['AFG', 'BGD', 'BTN', 'IND', 'KAZ', 'KGZ', 'LAO', 'MNG', 'MMR', 'NPL', 'PRK', 'RUS', 'TJK', 'VNM']",CHN
+33,Colombia,4 00 N 72 00 W,No,Spanish,1138910.0,No,"['BRA', 'ECU', 'PAN', 'PER', 'VEN']",COL
+34,Comoros,12 10 S 44 15 E,No,Arabic,2235.0,Yes,nan,COM
+35,Congo Democratic Republic of the,0 00 N 25 00 E,No,French,2344858.0,No,"['AGO', 'BDI', 'CAF', 'RWA', 'SSD', 'TZA', 'UGA', 'ZMB']",COD
+36,Costa Rica,10 00 N 84 00 W,No,Spanish,51100.0,No,"['NIC', 'PAN']",CRI
+37,Cote d'Ivoire,8 00 N 5 00 W,No,French,322463.0,No,"['BFA', 'GHA', 'GIN', 'LBR', 'MLI']",CIV
+38,Croatia,45 10 N 15 30 E,No,Croatian,56594.0,No,"['BIH', 'HUN', 'SVN']",HRV
+39,Cyprus,35 00 N 33 00 E,No,Greek,9251.0,No,"Akrotiri ,Dhekelia",CYP
+40,Czechia,49 45 N 15 30 E,Yes,Czech,78867.0,No,"['AUT', 'DEU', 'POL', 'SVK']",CZE
+41,Denmark,56 00 N 10 00 E,No,Danish,43094.0,No,DEU,DNK
+42,Djibouti,11 30 N 43 00 E,No,French,23200.0,No,"['ERI', 'ETH', 'SOM']",DJI
+43,Dominica,15 25 N 61 20 W,No,English,751.0,Yes,nan,DMA
+44,Dominican Republic,19 00 N 70 40 W,No,Spanish,48670.0,No,HTI,DOM
+45,Ecuador,2 00 S 77 30 W,No,Spanish,283561.0,No,"['COL', 'PER']",ECU
+46,Egypt,27 00 N 30 00 E,No,Arabic,1001450.0,No,"['ISR', 'LBY', 'PSE']",EGY
+47,El Salvador,13 50 N 88 55 W,No,Spanish,21041.0,No,"['GTM', 'HND']",SLV
+48,Equatorial Guinea,2 00 N 10 00 E,No,Spanish,28051.0,No,"['CMR', 'GAB']",GNQ
+49,Estonia,59 00 N 26 00 E,No,Estonian,45228.0,No,"['LVA', 'RUS']",EST
+50,Eswatini,26 30 S 31 30 E,Yes,English,17364.0,No,"['MOZ', 'ZAF']",SWZ
+51,Ethiopia,8 00 N 38 00 E,Yes,Oromo,1104300.0,No,"['DJI', 'ERI', 'KEN', 'SOM', 'SSD']",ETH
+52,Fiji,18 00 S 175 00 E,No,English,18274.0,Yes,nan,FJI
+53,Finland,64 00 N 26 00 E,No,Finnish,338145.0,No,"['NOR', 'RUS', 'SWE']",FIN
+54,France,46 00 N 2 00 E,No,French,643801.0,No,"['AND', 'FRA', 'GUF', 'DEU', 'ITA', 'MCO', 'ESP', 'CHE']",FRA
+55,Gabon,1 00 S 11 45 E,No,French,267667.0,No,"['CMR', 'GNQ']",GAB
+56,Gambia The,13 28 N 16 34 W,No,English,11300.0,No,SEN,GMB
+57,Georgia,42 00 N 43 30 E,No,Georgian,69700.0,No,"['ARM', 'AZE', 'RUS', 'TUR']",GEO
+58,Germany,51 00 N 9 00 E,No,German,357022.0,No,"['AUT', 'CZE', 'DNK', 'FRA', 'NLD', 'POL', 'CHE']",DEU
+59,Ghana,8 00 N 2 00 W,No,Asante,238533.0,No,"['BFA', 'CIV', 'TGO']",GHA
+60,Greece,39 00 N 22 00 E,No,Greek,131957.0,No,"['ALB', 'BGR', 'MKD', 'TUR']",GRC
+61,Grenada,12 07 N 61 40 W,No,English,344.0,Yes,nan,GRD
+62,Guatemala,15 30 N 90 15 W,No,Spanish,108889.0,No,"['BLZ', 'SLV', 'HND', 'MEX']",GTM
+63,Guinea,11 00 N 10 00 W,No,French,245857.0,No,"['CIV', 'GNB', 'LBR', 'MLI', 'SEN', 'SLE']",GIN
+64,Guinea-Bissau,12 00 N 15 00 W,No,Portuguese-based,36125.0,No,"['GIN', 'SEN']",GNB
+65,Guyana,5 00 N 59 00 W,No,English,214969.0,No,"['BRA', 'SUR', 'VEN']",GUY
+66,Haiti,19 00 N 72 25 W,No,French,27750.0,No,DOM,HTI
+67,Honduras,15 00 N 86 30 W,No,Spanish,112090.0,No,"['SLV', 'GTM', 'NIC']",HND
+68,Hong Kong,22 15 N 114 10 E,No,Cantonese,1108.0,No,CHN,HKG
+69,Hungary,47 00 N 20 00 E,Yes,Hungarian,93028.0,No,"['AUT', 'HRV', 'ROU', 'SRB', 'SVK', 'SVN', 'UKR']",HUN
+70,Iceland,65 00 N 18 00 W,No,Icelandic,103000.0,Yes,nan,ISL
+71,India,20 00 N 77 00 E,No,Hindi,3287263.0,No,"['BGD', 'BTN', 'CHN', 'MMR', 'NPL', 'PAK']",IND
+72,Indonesia,5 00 S 120 00 E,No,Bahasa,1904569.0,No,"['MYS', 'PNG', 'TLS']",IDN
+73,Iran,32 00 N 53 00 E,No,Persian,1648195.0,No,"['AFG', 'ARM', 'AZE', 'IRQ', 'PAK', 'TUR']",IRN
+74,Iraq,33 00 N 44 00 E,No,Arabic,438317.0,No,"['IRN', 'JOR', 'KWT', 'SAU', 'SYR', 'TUR']",IRQ
+75,Ireland,53 00 N 8 00 W,No,English,70273.0,No,GBR,IRL
+76,Israel,31 30 N 34 45 E,No,Hebrew,21937.0,No,"['EGY', 'JOR', 'LBN', 'PSE', 'SYR']",ISR
+77,Italy,42 50 N 12 50 E,No,Italian,301340.0,No,"['AUT', 'FRA', 'SMR', 'SVN', 'CHE', 'VAT']",ITA
+78,Jamaica,18 15 N 77 30 W,No,English,10991.0,Yes,nan,JAM
+79,Japan,36 00 N 138 00 E,No,Japanesemajor-language,377915.0,Yes,nan,JPN
+80,Jordan,31 00 N 36 00 E,No,Arabic,89342.0,No,"['IRQ', 'ISR', 'PSE', 'SAU', 'SYR']",JOR
+81,Kazakhstan,48 00 N 68 00 E,Yes,Kazakh,2724900.0,No,"['CHN', 'KGZ', 'RUS', 'UZB']",KAZ
+82,Kenya,1 00 N 38 00 E,No,English,580367.0,No,"['ETH', 'SOM', 'SSD', 'TZA', 'UGA']",KEN
+83,Kiribati,1 25 N 173 00 E,No,Gilbertese,811.0,Yes,nan,KIR
+84,Korea South,37 00 N 127 30 E,No,Korean,99720.0,No,PRK,KOR
+85,Kuwait,29 30 N 45 45 E,No,Arabic,17818.0,No,"['IRQ', 'SAU']",KWT
+86,Kyrgyzstan,41 00 N 75 00 E,Yes,Kyrgyz,199951.0,No,"['CHN', 'KAZ', 'TJK', 'UZB']",KGZ
+87,Laos,18 00 N 105 00 E,Yes,Lao,236800.0,No,"['KHM', 'CHN', 'MMR', 'THA', 'VNM']",LAO
+88,Latvia,57 00 N 25 00 E,No,Latvian,64589.0,No,"['BLR', 'EST', 'LTU', 'RUS']",LVA
+89,Lebanon,33 50 N 35 50 E,No,Arabic,10400.0,No,"['ISR', 'SYR']",LBN
+90,Lesotho,29 30 S 28 30 E,Yes,Sesotho,30355.0,No,ZAF,LSO
+91,Liberia,6 30 N 9 30 W,No,English,111369.0,No,"['CIV', 'GIN', 'SLE']",LBR
+92,Libya,25 00 N 17 00 E,No,Arabic,1759540.0,No,"['DZA', 'TCD', 'EGY', 'NER', 'SDN', 'TUN']",LBY
+93,Lithuania,56 00 N 24 00 E,No,Lithuanian,65300.0,No,"['BLR', 'LVA', 'POL', 'RUS']",LTU
+94,Luxembourg,49 45 N 6 10 E,Yes,Luxembourgish,2586.0,No,"['BEL', 'FRA', 'DEU']",LUX
+95,Madagascar,20 00 S 47 00 E,No,Malagasy,587041.0,Yes,nan,MDG
+96,Malawi,13 30 S 34 00 E,Yes,English,118484.0,No,"['MOZ', 'TZA', 'ZMB']",MWI
+97,Malaysia,2 30 N 112 30 E,No,Bahasa,329847.0,No,"['BRN', 'IDN', 'THA']",MYS
+98,Maldives,3 15 N 73 00 E,No,Dhivehi,298.0,Yes,nan,MDV
+99,Mali,17 00 N 4 00 W,Yes,French,1240192.0,No,"['DZA', 'BFA', 'CIV', 'GIN', 'MRT', 'NER', 'SEN']",MLI
+100,Malta,35 50 N 14 35 E,No,Maltese,316.0,Yes,nan,MLT
+101,Mauritania,20 00 N 12 00 W,No,Arabic,1030700.0,No,"['DZA', 'MLI', 'MAR', 'SEN']",MRT
+102,Mauritius,20 17 S 57 33 E,No,Creole,2040.0,Yes,nan,MUS
+103,Mexico,23 00 N 102 00 W,No,Spanish,1964375.0,No,"['BLZ', 'GTM']",MEX
+104,Moldova,47 00 N 29 00 E,Yes,Moldovan/Romanian,33851.0,No,"['ROU', 'UKR']",MDA
+105,Mongolia,46 00 N 105 00 E,Yes,Mongolian,1564116.0,No,"['CHN', 'RUS']",MNG
+106,Morocco,28 30 N 10 00 W,No,Arabic,716550.0,No,"['DZA', 'MRT', 'MAR', 'ESP']",MAR
+107,Mozambique,18 15 S 35 00 E,No,Makhuwa,799380.0,No,"['SWZ', 'MWI', 'ZAF', 'TZA', 'ZMB', 'ZWE']",MOZ
+108,Namibia,22 00 S 17 00 E,No,Oshiwambo,824292.0,No,"['AGO', 'BWA', 'ZAF', 'ZMB']",NAM
+109,Nepal,28 00 N 84 00 E,Yes,Nepali,147181.0,No,"['CHN', 'IND']",NPL
+110,Netherlands,52 31 N 5 46 E,No,Dutch,41543.0,No,"['BEL', 'DEU']",NLD
+111,New Zealand,41 00 S 174 00 E,No,English,268838.0,Yes,nan,NZL
+112,Nicaragua,13 00 N 85 00 W,No,Spanish,130370.0,No,"['CRI', 'HND']",NIC
+113,Niger,16 00 N 8 00 E,Yes,French,1.267,No,"['DZA', 'BEN', 'BFA', 'TCD', 'LBY', 'MLI', 'NGA']",NER
+114,Nigeria,10 00 N 8 00 E,No,English,923768.0,No,"['BEN', 'CMR', 'TCD', 'NER']",NGA
+115,North Macedonia,41 50 N 22 00 E,Yes,Macedonian,25713.0,No,"['ALB', 'BGR', 'GRC', 'XKX', 'SRB']",MKD
+116,Norway,62 00 N 10 00 E,No,Bokmal,323802.0,No,"['FIN', 'RUS', 'SWE']",NOR
+117,Oman,21 00 N 57 00 E,No,Arabic,309500.0,No,"['SAU', 'YEM']",OMN
+118,Pakistan,30 00 N 70 00 E,No,Punjabi,796095.0,No,"['AFG', 'CHN', 'IND', 'IRN']",PAK
+119,Panama,9 00 N 80 00 W,No,Spanish,75420.0,No,"['COL', 'CRI']",PAN
+120,Papua New Guinea,6 00 S 147 00 E,No,Tok,462840.0,No,IDN,PNG
+121,Paraguay,23 00 S 58 00 W,Yes,Spanish,406752.0,No,"['ARG', 'BOL', 'BRA']",PRY
+122,Peru,10 00 S 76 00 W,No,Spanish,1285216.0,No,"['BOL', 'BRA', 'CHL', 'COL', 'ECU']",PER
+123,Philippines,13 00 N 122 00 E,No,unspecified,300000.0,Yes,nan,PHL
+124,Poland,52 00 N 20 00 E,No,Polish,312685.0,No,"['BLR', 'CZE', 'DEU', 'LTU', 'RUS', 'UKR']",POL
+125,Portugal,39 30 N 8 00 W,No,Portuguese,92090.0,No,ESP,PRT
+126,Qatar,25 30 N 51 15 E,No,Arabic,11586.0,No,SAU,QAT
+127,Romania,46 00 N 25 00 E,No,Romanian,238391.0,No,"['BGR', 'HUN', 'MDA', 'SRB', 'UKR']",ROU
+128,Russia,60 00 N 100 00 E,No,Russian,17098242.0,No,"['AZE', 'BLR', 'CHN', 'EST', 'FIN', 'KAZ', 'LVA', 'LTU', 'MNG', 'PRK', 'NOR', 'POL', 'UKR']",RUS
+129,Rwanda,2 00 S 30 00 E,Yes,Kinyarwanda,26338.0,No,"['BDI', 'COD', 'TZA', 'UGA']",RWA
+130,Saint Kitts and Nevis,17 20 N 62 45 W,No,English,261.0,Yes,nan,KNA
+131,Saint Lucia,13 53 N 60 58 W,No,English,616.0,Yes,nan,LCA
+132,Saint Vincent and the Grenadines,13 15 N 61 12 W,No,English,389.0,Yes,nan,VCT
+133,Samoa,13 35 S 172 20 W,No,Samoan,2831.0,Yes,nan,WSM
+134,Sao Tome and Principe,1 00 N 7 00 E,No,Portuguese,964.0,Yes,nan,STP
+135,Saudi Arabia,25 00 N 45 00 E,No,Arabic,2149690.0,No,"['IRQ', 'JOR', 'KWT', 'OMN', 'QAT', 'YEM']",SAU
+136,Senegal,14 00 N 14 00 W,No,French,196722.0,No,"['GMB', 'GNB', 'MLI', 'MRT']",SEN
+137,Seychelles,4 35 S 55 40 E,No,Seychellois,455.0,Yes,nan,SYC
+138,Sierra Leone,8 30 N 11 30 W,No,English,71740.0,No,"['GIN', 'LBR']",SLE
+139,Singapore,1 22 N 103 48 E,No,English,719.0,Yes,nan,SGP
+140,Slovakia,48 40 N 19 30 E,Yes,Slovak,49035.0,No,"['AUT', 'CZE', 'HUN', 'POL', 'UKR']",SVK
+141,Slovenia,46 07 N 14 49 E,No,Slovene,20273.0,No,"['AUT', 'HRV', 'HUN', 'ITA']",SVN
+142,Solomon Islands,8 00 S 159 00 E,No,Melanesian,28896.0,Yes,nan,SLB
+143,Somalia,10 00 N 49 00 E,No,Somali,637657.0,No,"['DJI', 'ETH', 'KEN']",SOM
+144,South Africa,29 00 S 24 00 E,No,isiZulu,1219090.0,No,"['BWA', 'SWZ', 'LSO', 'MOZ', 'NAM', 'ZWE']",ZAF
+145,Spain,40 00 N 4 00 W,No,Castilian,505370.0,No,"['AND', 'FRA', 'GIB', 'MAR', 'PRT']",ESP
+146,Sri Lanka,7 00 N 81 00 E,No,Sinhala,65610.0,Yes,nan,LKA
+147,Sudan,15 00 N 30 00 E,No,Arabic,1861484.0,No,"['CAF', 'TCD', 'EGY', 'ERI', 'ETH', 'LBY', 'SSD']",SDN
+148,Suriname,4 00 N 56 00 W,No,Dutch,163820.0,No,"['BRA', 'GUF', 'GUY']",SUR
+149,Sweden,62 00 N 15 00 E,No,Swedish,450295.0,No,"['FIN', 'NOR']",SWE
+150,Switzerland,47 00 N 8 00 E,Yes,German,41277.0,No,"['AUT', 'FRA', 'DEU', 'ITA', 'LIE']",CHE
+151,Syria,35 00 N 38 00 E,No,Arabic,187437.0,No,"['IRQ', 'ISR', 'JOR', 'LBN', 'TUR']",SYR
+152,Tajikistan,39 00 N 71 00 E,Yes,Tajik,144100.0,No,"['AFG', 'CHN', 'KGZ', 'UZB']",TJK
+153,Tanzania,6 00 S 35 00 E,No,Kiswahili,947300.0,No,"['BDI', 'COD', 'KEN', 'MWI', 'MOZ', 'RWA', 'UGA', 'ZMB']",TZA
+154,Thailand,15 00 N 100 00 E,No,Thai,513120.0,No,"['KHM', 'LAO', 'MYS', 'MMR']",THA
+155,Togo,8 00 N 1 10 E,No,French,56785.0,No,"['BEN', 'BFA', 'GHA']",TGO
+156,Tonga,20 00 S 175 00 W,No,Tongan,747.0,Yes,nan,TON
+157,Trinidad and Tobago,11 00 N 61 00 W,No,English,5128.0,Yes,nan,TTO
+158,Tunisia,34 00 N 9 00 E,No,Arabic,163610.0,No,"['DZA', 'LBY']",TUN
+159,Turkey (Turkiye),39 00 N 35 00 E,No,Turkish,783562.0,No,"['ARM', 'AZE', 'BGR', 'GEO', 'GRC', 'IRN', 'IRQ', 'SYR']",TUR
+160,Turkmenistan,40 00 N 60 00 E,Yes,Turkmen,488100.0,No,"['AFG', 'IRN', 'KAZ', 'UZB']",TKM
+161,Uganda,1 00 N 32 00 E,Yes,English,241038.0,No,"['COD', 'KEN', 'RWA', 'SSD', 'TZA']",UGA
+162,Ukraine,49 00 N 32 00 E,No,Ukrainian,603550.0,No,"['BLR', 'HUN', 'MDA', 'POL', 'ROU', 'RUS', 'SVK']",UKR
+163,United Arab Emirates,24 00 N 54 00 E,No,Arabic,83600.0,No,"['OMN', 'SAU']",ARE
+164,United Kingdom,54 00 N 2 00 W,No,Englishnote:,243610.0,No,IRL,GBR
+165,United States,38 00 N 97 00 W,No,English,9833517.0,No,"['CAN', 'CUB', 'MEX']",USA
+166,Uruguay,33 00 S 56 00 W,No,Spanish,176215.0,No,"['ARG', 'BRA']",URY
+167,Uzbekistan,41 00 N 64 00 E,Yes,Uzbek,447400.0,No,"['AFG', 'KAZ', 'KGZ', 'TJK']",UZB
+168,Vanuatu,16 00 S 167 00 E,No,local,12189.0,Yes,nan,VUT
+169,Venezuela,8 00 N 66 00 W,No,Spanish,912050.0,No,"['BRA', 'COL', 'GUY']",VEN
+170,Vietnam,16 10 N 107 50 E,No,Vietnamese,331210.0,No,"['KHM', 'CHN', 'LAO']",VNM
+171,Yemen,15 00 N 48 00 E,No,Arabic,527968.0,No,"['OMN', 'SAU']",YEM
+172,Zambia,15 00 S 30 00 E,Yes,Bemba,752618.0,No,"['AGO', 'BWA', 'COD', 'MWI', 'MOZ', 'NAM', 'TZA', 'ZWE']",ZMB
+173,Zimbabwe,20 00 S 30 00 E,Yes,Shona,390757.0,No,"['BWA', 'MOZ', 'ZAF', 'ZMB']",ZWE
