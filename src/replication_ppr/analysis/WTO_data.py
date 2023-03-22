@@ -26,5 +26,13 @@ GATT_WTO["GATT"] = GATT_WTO["GATT"].fillna(GATT_WTO["WTO"])
 GATT_WTO = pd.DataFrame(GATT_WTO)
 GATT_WTO["join"] = GATT_WTO[["GATT", "WTO"]].min(axis=1)
 GATT_WTO = GATT_WTO.drop(["GATT", "WTO"], axis=1)
-#
+
 pairs = dist.loc[:, ["pair_id", "ctry1", "ctry2"]]
+merged_df = pd.merge(GATT_WTO, pairs, how="inner", left_on="Members", right_on="ctry1")
+merged_df = pd.merge(
+    merged_df,
+    GATT_WTO,
+    how="inner",
+    left_on="ctry2",
+    right_on="Members",
+)
