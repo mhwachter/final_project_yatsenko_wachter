@@ -5,7 +5,7 @@
 
 ## Authors
 
-Anzehlika Yatsenko & Marcel Harald Wachter
+Anzhelika Yatsenko & Marcel Harald Wachter
 
 ## Description
 
