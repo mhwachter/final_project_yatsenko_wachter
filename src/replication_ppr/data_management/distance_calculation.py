@@ -11,7 +11,7 @@ geolocator = Nominatim(user_agent="my-app")
 
 # define function to get latitude and longitude values for a country
 def get_lat_long(country):
-    location = geolocator.geocode(country)
+    location = geolocator.geocode(country, timeout=None)
     if location is not None:
         return (location.latitude, location.longitude)
     else:

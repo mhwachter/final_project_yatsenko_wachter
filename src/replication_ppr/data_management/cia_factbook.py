@@ -163,6 +163,12 @@ data["border_countries"] = cc.pandas_convert(
     series=data["border_countries"], to="ISO3", not_found=None
 )
 
+data.loc[data["island"] == "Yes", "island"] = 1
+data.loc[data["island"] == "No", "island"] = 0
+
+data.loc[data["landlocked"] == "Yes", "landlocked"] = 1
+data.loc[data["landlocked"] == "No", "landlocked"] = 0
+
 data = data.reset_index(drop=True)
 
 data.to_csv("../../../bld/python/data/cia_factbook.csv", index=False)
