@@ -33,6 +33,10 @@ rta = rta.assign(
 rta = rta.drop(rta[rta.ctry1 == rta.ctry2].index)
 rta = rta.drop_duplicates("pair_year_id")
 
+rta["cer"] = 0
+rta.loc[rta["cerg"] == 1, "cer"] = 1
+rta.loc[rta["cers"] == 1, "cer"] = 1
+
 rta = rta[
     [
         "pair_id",
@@ -44,8 +48,7 @@ rta = rta[
         "ctry2_ISO3",
         "rta",
         "eu",
-        "cerg",
-        "cers",
+        "cer",
         "patcra",
         "usaisr",
         "cacm",
