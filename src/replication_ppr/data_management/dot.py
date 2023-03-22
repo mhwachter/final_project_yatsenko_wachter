@@ -89,11 +89,13 @@ dot["countries"] = dot["countries"].sort_values().apply(lambda x: sorted(x))
 dot["ctry1"] = dot["countries"].str[0]
 dot["ctry2"] = dot["countries"].str[1]
 
-dot = dot.assign(pair_id=list(map(frozenset, zip(dot.ctry1_ISO3, dot.ctry2_ISO3))))
+dot.columns = dot.columns.str.strip()
 
-dot = dot.assign(
-    pair_year_id=list(map(frozenset, zip(dot.ctry1_ISO3, dot.ctry2_ISO3, dot.Year))),
-)
+
+dot["pair_id"] = dot[["ctry1_ISO3", "ctry2_ISO3"]].values.tolist()
+dot["pair_id"] = dot["pair_id"].apply(sorted).str.join("")
+
+dot["pair_year_id"] = dot["pair_id"] + dot["Year"].map(str)
 
 dot = dot[
     [

@@ -165,4 +165,4 @@ data["border_countries"] = cc.pandas_convert(
 
 data = data.reset_index(drop=True)
 
-data.to_csv("../data/cia_factbook.csv", index=False)
+data.to_csv("../../../bld/python/data/cia_factbook.csv", index=False)

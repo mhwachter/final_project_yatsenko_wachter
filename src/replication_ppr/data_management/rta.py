@@ -24,11 +24,11 @@ rta["ctry2_ISO3"] = cc.pandas_convert(series=rta["ctry2"], to="ISO3")
 rta = rta[rta["ctry1_ISO3"].isin(iso3)]
 rta = rta[rta["ctry2_ISO3"].isin(iso3)]
 
-rta = rta.assign(pair_id=list(map(frozenset, zip(rta.ctry1_ISO3, rta.ctry2_ISO3))))
 
-rta = rta.assign(
-    pair_year_id=list(map(frozenset, zip(rta.ctry1_ISO3, rta.ctry2_ISO3, rta.Year))),
-)
+rta["pair_id"] = rta[["ctry1_ISO3", "ctry2_ISO3"]].values.tolist()
+rta["pair_id"] = rta["pair_id"].apply(sorted).str.join("")
+
+rta["pair_year_id"] = rta["pair_id"] + rta["Year"].map(str)
 
 rta = rta.drop(rta[rta.ctry1 == rta.ctry2].index)
 rta = rta.drop_duplicates("pair_year_id")
