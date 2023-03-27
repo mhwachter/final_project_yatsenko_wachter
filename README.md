@@ -37,6 +37,16 @@ To build the project, type
 $ pytask
 ```
 
+## Project Structure
+
+The `src` directory contains all files needed for the replication and is organised as
+follows:
+
+- `data_management`
+- `data`
+- `analysis`
+- `final`
+
 ## Credits
 
 This project was created with [cookiecutter](https://github.com/audreyr/cookiecutter)
