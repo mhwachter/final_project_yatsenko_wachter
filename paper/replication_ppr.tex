@@ -19,6 +19,15 @@
 % \usepackage{pdf14} % Enable for Manuscriptcentral -- can't handle pdf 1.5
 % \usepackage{endfloat} % Enable to move tables / figures to the end. Useful for some
 % submissions.
+\usepackage{booktabs}
+\usepackage{siunitx}
+\newcolumntype{d}{S[
+    input-open-uncertainty=,
+    input-close-uncertainty=,
+    parse-numbers = false,
+    table-align-text-pre=false,
+    table-align-text-post=false
+ ]}
 
 \usepackage[
     natbib=true,
@@ -75,6 +84,13 @@
 \begin{abstract}
     This project replicates \citep{Rose2004}.
 \end{abstract}
+
+\input{../bld/R/tables/tab1_results.tex}
+\input{../bld/R/tables/tab2_results.tex}
+\input{../bld/R/tables/tab3_results.tex}
+\input{../bld/R/tables/tab4_results.tex}
+\input{../bld/R/tables/tab5_results.tex}
+\input{../bld/R/tables/tab8_results.tex}
 
 \clearpage
 
