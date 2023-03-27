@@ -5,7 +5,7 @@ import pandas as pd
 
 cc = coco.CountryConverter()
 
-with zipfile.ZipFile("../data/rta.zip", "r") as zip_ref:
+with zipfile.ZipFile("../data/rta.csv.zip", "r") as zip_ref:
     zip_ref.extractall("../data")
 
 rta = pd.read_csv("../data/rta.csv")
