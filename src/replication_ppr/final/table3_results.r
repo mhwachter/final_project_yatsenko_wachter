@@ -19,6 +19,7 @@ create_table3 <- function(models) {
     output = "latex",
     title = "Allowing the Effects to Vary Over GATT Rounds"
   )
+  tab3_tex <- tab3_tex %>% kable_styling(latex_options = "scale_down")
   save_kable(tab3_tex, file = produces)
 }
 
