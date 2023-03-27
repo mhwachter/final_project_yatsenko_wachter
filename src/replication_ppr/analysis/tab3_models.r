@@ -12,8 +12,8 @@ depends_on <- config$depends_on
 produces <- config$produces
 
 tab3_est_models <- function(data, controls) {
-  m1 <- feols(fml = ltrade ~ .[ctrls] + bothin:periods + onein:periods | year, data = df)
-  m2 <- feols(fml = ltrade ~ .[ctrls] + bothin:periods + onein:periods | pairid, data = df)
+  m1 <- feols(fml = ltrade ~ .[ctrls] + bothin:periods + onein:periods | year, data = df, vcov = cluster ~ pairid)
+  m2 <- feols(fml = ltrade ~ .[ctrls] + bothin:periods + onein:periods | pairid, data = df, vcov = cluster ~ pairid)
 
   tab3_models <- list("OLS year effects" = m1, "Fixed country-pair effects" = m2)
   saveRDS(tab3_models, file = produces)

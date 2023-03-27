@@ -12,7 +12,7 @@ depends_on <- config$depends_on
 produces <- config$produces
 
 tab2_est_models <- function(data, controls) {
-  m1 <- feols(fml = ltrade ~ .[controls] | year, data = data, split = ~ year %keep% c("1950", "1955", "1960", "1965", "1970", "1975", "1980", "1985", "1990", "1995"))
+  m1 <- feols(fml = ltrade ~ .[controls] | year, data = data, split = ~ year %keep% c("1950", "1955", "1960", "1965", "1970", "1975", "1980", "1985", "1990", "1995"), vcov = cluster ~ pairid)
 
   saveRDS(m1, file = produces)
 }
