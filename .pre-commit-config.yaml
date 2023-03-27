@@ -110,6 +110,11 @@ repos:
     rev: v2.2.0
     hooks:
       - id: setup-cfg-fmt
+  - repo: https://github.com/lorenzwalthert/precommit
+    rev: v0.3.2
+    hooks:
+      - id: style-files
+
 
 ci:
   autoupdate_schedule: monthly
