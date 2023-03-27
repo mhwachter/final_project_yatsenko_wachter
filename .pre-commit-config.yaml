@@ -114,6 +114,7 @@ repos:
     rev: v0.3.2
     hooks:
       - id: style-files
+      - id: lintr
 
 
 ci:
