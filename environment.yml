@@ -25,6 +25,21 @@ dependencies:
   - setuptools_scm
   - statsmodels
   - toml
+  - requests
+  - beautifulsoup4
+  - selenium
+  - numpy
+  - r-base
+  - r-fixest
+  - r-data.table
+  - r-plm
+  - r-modelsummary
+  - r-jsonlite
+  - r-AER
+  - r-quantreg
+  - r-kableExtra
   - pip:
       - -e .
       - kaleido
+      - country_converter
+      - geopy
