@@ -38,6 +38,13 @@ def task_final_r5():
     pass
 
 
+@pytask.mark.depends_on(BLD / "R" / "models" / "tab6_models.rds")
+@pytask.mark.r(script=SRC / "final" / "table6_results.r")
+@pytask.mark.produces(BLD / "R" / "tables" / "tab6_results.tex")
+def task_final_r6():
+    pass
+
+
 @pytask.mark.depends_on(BLD / "R" / "models" / "tab8_models.rds")
 @pytask.mark.r(script=SRC / "final" / "table8_results.r")
 @pytask.mark.produces(BLD / "R" / "tables" / "tab8_results.tex")

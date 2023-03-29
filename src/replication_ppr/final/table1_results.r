@@ -3,6 +3,7 @@ rm(list = ls())
 library(jsonlite)
 library(modelsummary)
 library(kableExtra)
+library(sandwich)
 
 args <- commandArgs(trailingOnly = TRUE)
 path_to_json <- args[length(args)]
