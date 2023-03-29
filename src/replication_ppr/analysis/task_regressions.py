@@ -39,6 +39,13 @@ def task_analysis_r5():
 
 
 @pytask.mark.depends_on(BLD / "python" / "data" / "original_extended.csv")
+@pytask.mark.r(script=SRC / "analysis" / "tab6_models.r")
+@pytask.mark.produces(BLD / "R" / "models" / "tab6_models.rds")
+def task_analysis_r6():
+    pass
+
+
+@pytask.mark.depends_on(BLD / "python" / "data" / "original_extended.csv")
 @pytask.mark.r(script=SRC / "analysis" / "tab8_models.r")
 @pytask.mark.produces(BLD / "R" / "models" / "tab8_models.rds")
 def task_analysis_r8():
