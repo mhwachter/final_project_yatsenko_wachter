@@ -1,4 +1,4 @@
-"""Tasks for creating RTA data."""
+"""Tasks for doing the data management."""
 
 import pandas as pd
 import pytask
