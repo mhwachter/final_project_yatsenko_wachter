@@ -81,7 +81,7 @@ def add_original_variables(data, original_data):
                 "colony",
                 "comctry",
                 "custrict",
-                "rigional",
+                "regional",
                 "bothin",
                 "onein",
                 "gsp",
