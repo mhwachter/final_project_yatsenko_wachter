@@ -56,11 +56,11 @@ def do_merge(dot, rta, dist, wb_reg_inc, cia_fact):
 
 
 def calc_additional_vars(data):
-    data["larea"] = np.log(data["area_1"] * data["area_2"])
+    data["lareap"] = np.log(data["area_1"] * data["area_2"])
     data["comlang"] = 0
     data.loc[data["language_1"] == data["language_2"], "comlang"] = 1
     data["island"] = data["island_1"] + data["island_2"]
-    data["landlocked"] = data["landlocked_1"] + data["landlocked_2"]
+    data["landl"] = data["landlocked_1"] + data["landlocked_2"]
     data["border"] = 0
     data.loc[
         data["ctry1_ISO3"].isin(data["border_countries_2"]),
@@ -72,8 +72,24 @@ def calc_additional_vars(data):
 def add_original_variables(data, original_data):
     data = pd.merge(
         data,
-        original_data["lrgdp"],
+        original_data[
+            [
+                "lrgdp",
+                "lrgdppc",
+                "comcol",
+                "curcol",
+                "colony",
+                "comctry",
+                "custrict",
+                "rigional",
+                "bothin",
+                "onein",
+                "gsp",
+                "pair_year_id_ISO3",
+            ]
+        ],
         left_on="pair_year_id",
         right_on="pair_year_id_ISO3",
         how="left",
     )
+    return data
