@@ -4,18 +4,6 @@ import pandas as pd
 import pytask
 
 from replication_ppr.config import BLD, SRC
-from replication_ppr.data_management.cia_factbook import (
-    cia_factbook_cleaning,
-    correct_country_names,
-    get_cia_factbook_countries,
-    scrape_cia_factbook_data,
-)
-from replication_ppr.data_management.distance_calculation import (
-    calculate_distance,
-    create_distance_data,
-    distance_data_cleaning,
-    get_coordinates,
-)
 from replication_ppr.data_management.dot import create_dot_final
 from replication_ppr.data_management.final_dataset import (
     add_original_variables,
@@ -70,28 +58,6 @@ def task_create_dot_final(depends_on, produces):
 
 @pytask.mark.depends_on(
     {
-        "countries_list": SRC / "data" / "countries_list.csv",
-    },
-)
-@pytask.mark.produces(
-    {
-        "cia_factbook": BLD / "python" / "data" / "cia_factbook.csv",
-    },
-)
-def task_cia_factbook(depends_on, produces):
-    countries_cia = get_cia_factbook_countries()
-    countries_list = pd.read_csv(depends_on["countries_list"])
-    countries_cia = correct_country_names(
-        data=countries_cia,
-        countries_list=countries_list,
-    )
-    cia_factbook = scrape_cia_factbook_data(countries_cia=countries_cia)
-    cia_factbook = cia_factbook_cleaning(data=cia_factbook)
-    cia_factbook.to_csv(produces["cia_factbook"])
-
-
-@pytask.mark.depends_on(
-    {
         "original_data": SRC / "data" / "original_data_paper.csv",
     },
 )
@@ -104,25 +70,6 @@ def task_original_data(depends_on, produces):
     original_data = pd.read_csv(depends_on["original_data"])
     original_extended = extend_original_data(data=original_data)
     original_extended.to_csv(produces["original_extended"], index=False)
-
-
-@pytask.mark.depends_on(
-    {
-        "cia_factbook": BLD / "python" / "data" / "cia_factbook.csv",
-    },
-)
-@pytask.mark.produces(
-    {
-        "distance_data": BLD / "python" / "data" / "distance_final.csv",
-    },
-)
-def task_distance_calculation(depends_on, produces):
-    cia_factbook = pd.read_csv(depends_on["cia_factbook"])
-    coordinates = get_coordinates(data=cia_factbook)
-    distances = calculate_distance(data=coordinates)
-    distances = create_distance_data(data=distances)
-    distances = distance_data_cleaning(data=distances)
-    distances.to_csv(produces["distance_data"])
 
 
 @pytask.mark.depends_on(
@@ -171,9 +118,10 @@ def task_final_dataset(depends_on, produces):
         wb_reg_inc=wb_reg_inc,
         cia_fact=cia_fact,
     )
-    final_dataset = calc_additional_vars(data=final_dataset)
     final_dataset = add_original_variables(
         data=final_dataset,
         original_data=original_extended,
     )
+    final_dataset = calc_additional_vars(data=final_dataset)
+
     final_dataset.to_csv(produces)

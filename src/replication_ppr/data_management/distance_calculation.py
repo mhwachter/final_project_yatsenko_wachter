@@ -77,7 +77,7 @@ def create_distance_data(data):
             "Distance (km)",
             "Distance (miles)",
             "Log Distance (km)",
-            "Log Distance (miles)",
+            "ldist",
         ],
     )
     return distance_df
@@ -103,7 +103,7 @@ def distance_data_cleaning(data):
             "Distance (km)",
             "Distance (miles)",
             "Log Distance (km)",
-            "Log Distance (miles)",
+            "ldist",
         ]
     ]
 

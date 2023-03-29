@@ -56,6 +56,11 @@ def do_merge(dot, rta, dist, wb_reg_inc, cia_fact):
 
 
 def calc_additional_vars(data):
+    data["cty1_str"] = data["cty1"].apply(str)
+    data["cty2_str"] = data["cty2"].apply(str)
+    dummies = data[["cty1_str", "cty2_str"]].stack().str.get_dummies().sum(level=0)
+    dummies = dummies.add_prefix("cd_")
+    data = data.join(dummies)
     data["lareap"] = np.log(data["area_1"] * data["area_2"])
     data["comlang"] = 0
     data.loc[data["language_1"] == data["language_2"], "comlang"] = 1
@@ -86,6 +91,8 @@ def add_original_variables(data, original_data):
                 "onein",
                 "gsp",
                 "pair_year_id_ISO3",
+                "cty1",
+                "cty2",
             ]
         ],
         left_on="pair_year_id",
