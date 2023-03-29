@@ -10,6 +10,15 @@ cc = coco.CountryConverter()
 
 
 def get_cia_factbook_countries():
+    """Web scraps the CIA website and creates a list of countries dataset.
+
+    Args:
+        none.
+
+    Returns:
+        data (Data Frame).
+
+    """
     browser = webdriver.Firefox()
     browser.get("https://www.cia.gov/the-world-factbook/countries/")
     element = browser.find_element(By.CLASS_NAME, "pagination__arrow-right")
@@ -25,6 +34,16 @@ def get_cia_factbook_countries():
 
 
 def correct_country_names(data, countries_list):
+    """Corrects country names according to ISO standard.
+
+    Args:
+       data (Data Frame): Data from CIA website.
+       countries_list (Data Frame): List of countries from the original paper.
+
+    Returns:
+       data (Data Frame): Returns the corrected dataset.
+
+    """
     data["country"] = data["country"].str.lower()
     data["country"] = data["country"].replace(
         {" ": "-", ",": "", "\(": "", "\)": "", "`": "", "’": ""}, regex=True
@@ -41,6 +60,15 @@ def correct_country_names(data, countries_list):
 
 
 def scrape_cia_factbook_data(countries_cia):
+    """Web scraps the CIA website and creates a dataset with additional information.
+
+    Args:
+        countries_cia (Data Frame): Uses the list of countries from the CIA website .
+
+    Returns:
+        data (Data Frame):Returns the corrected dataset.
+
+    """
     d = []
     for country in countries_cia["country"]:
         url = "https://www.cia.gov/the-world-factbook/countries/" + str(country)
@@ -89,6 +117,15 @@ def scrape_cia_factbook_data(countries_cia):
 
 
 def cia_factbook_cleaning(data):
+    """Cleans,transform data extracted from the CIA website.
+
+    Args:
+        data (Data Frame):Uses the created dataset.
+
+    Returns:
+        data (Data Frame):Returns the cleaned dataset.
+
+    """
     data["island"] = data["island"].str.replace(",", "")
     data["area"] = data["area"].str.replace(",", "")
 

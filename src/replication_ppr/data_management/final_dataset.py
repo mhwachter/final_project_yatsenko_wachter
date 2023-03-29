@@ -3,6 +3,19 @@ import pandas as pd
 
 
 def do_merge(dot, rta, dist, wb_reg_inc, cia_fact):
+    """Merges final dataset.
+
+    Args:
+        dot (data Frame) : Direction of trade dataset.
+        rta (data Frame) : Regional Trade agreements dataset.
+        dist (data frame) : Distance between countries dataset.
+        wb_reg_inc (data Frame): World Bank income classification dataset.
+        cia_fact (data Frame): CIA fact-book dataset.
+
+    Returns:
+        data (Data Frame):Returns merged dataset.
+
+    """
     data_final = pd.merge(dot, rta, how="left", on="pair_year_id", suffixes=("", "_y"))
     data_final = data_final.drop(data_final.filter(regex="_y$").columns, axis=1)
 
@@ -56,6 +69,15 @@ def do_merge(dot, rta, dist, wb_reg_inc, cia_fact):
 
 
 def calc_additional_vars(data):
+    """Creates additional dummy variables.
+
+    Args:
+      data (data frame) :uses final dataset.
+
+    Returns:
+        data (Data Frame):Returns merged dataset.
+
+    """
     data["cty1_str"] = data["cty1"].apply(str)
     data["cty2_str"] = data["cty2"].apply(str)
     dummies = data[["cty1_str", "cty2_str"]].stack().str.get_dummies().sum(level=0)
@@ -75,6 +97,16 @@ def calc_additional_vars(data):
 
 
 def add_original_variables(data, original_data):
+    """Merges self-sourced dataset with cut version of dataset used in original paper.
+
+    Args:
+        data(data frame):self-sourced dataset.
+        original_data (data frame): dataset used by a paper author.
+
+    Returns:
+        data (Data Frame):Returns merged final dataset.
+
+    """
     data = pd.merge(
         data,
         original_data[
