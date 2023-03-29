@@ -29,6 +29,14 @@ dependencies:
   - beautifulsoup4
   - selenium
   - numpy
+  - r-data.table
+  - r-fixest
+  - r-plm
+  - r-AER
+  - r-jsonlite
+  - r-quantreg
+  - r-kableExtra
+  - r-modelsummary
   - pip:
       - -e .
       - kaleido
