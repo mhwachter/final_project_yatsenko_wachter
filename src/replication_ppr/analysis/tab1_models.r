@@ -12,10 +12,10 @@ depends_on <- config$depends_on
 produces <- config$produces
 
 tab1_est_models <- function(data, controls) {
-  m1 <- feols(fml = ltrade ~ .[controls] | year, data = data, vcov = cluster ~ pairid)
-  m2 <- feols(fml = ltrade ~ .[controls] | year, data = data[cty1 >= 200 & cty2 >= 200], vcov = cluster ~ pairid)
-  m3 <- feols(fml = ltrade ~ .[controls] | year, data = data[year > 1970], vcov = cluster ~ pairid)
-  m4 <- feols(fml = ltrade ~ .[controls] + ..("^cd_") | year, data = data, vcov = cluster ~ pairid)
+  m1 <- feols(fml = ltrade ~ .[controls] | year, data = data,vcov = cluster~pairid)
+  m2 <- feols(fml = ltrade ~ .[controls] | year, data = data[cty1 >= 200 & cty2 >= 200],vcov = cluster~pairid)
+  m3 <- feols(fml = ltrade ~ .[controls] | year, data = data[year > 1970],vcov = cluster~pairid)
+  m4 <- feols(fml = ltrade ~ .[controls] + ..("^cd_") | year, data = data,vcov = cluster~pairid)
 
   tab1_models <- list("Default" = m1, "No industrial countries" = m2, "Post 1970" = m3, "With country effects" = m4)
   saveRDS(tab1_models, file = produces)
