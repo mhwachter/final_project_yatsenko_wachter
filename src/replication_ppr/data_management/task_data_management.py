@@ -9,6 +9,7 @@ from replication_ppr.data_management.final_dataset import (
     add_original_variables,
     calc_additional_vars,
     do_merge,
+    rename_columns,
 )
 from replication_ppr.data_management.original_data import extend_original_data
 from replication_ppr.data_management.rta import create_rta_final, unzip_rta_data
@@ -122,6 +123,6 @@ def task_final_dataset(depends_on, produces):
         data=final_dataset,
         original_data=original_extended,
     )
+    final_dataset = rename_columns(data=final_dataset)
     final_dataset = calc_additional_vars(data=final_dataset)
-
     final_dataset.to_csv(produces)

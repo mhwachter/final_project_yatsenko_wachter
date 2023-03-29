@@ -125,10 +125,43 @@ def add_original_variables(data, original_data):
                 "pair_year_id_ISO3",
                 "cty1",
                 "cty2",
+                "pairid",
+                "found1",
+                "found2",
+                "minyrs",
+                "maxyrs",
+                "sasia1",
+                "sasia2",
+                "easia1",
+                "easia2",
+                "ssafr1",
+                "ssafr2",
+                "menaf1",
+                "menaf2",
+                "latca1",
+                "latca2",
+                "highi1",
+                "highi2",
+                "midin1",
+                "midin2",
+                "lowin1",
+                "lowin2",
+                "least1",
+                "least2",
+                "cty1_UNregion",
+                "cty2_UNregion",
+                "cty1_ISO3",
+                "cty2_ISO3",
             ]
         ],
         left_on="pair_year_id",
         right_on="pair_year_id_ISO3",
-        how="left",
+        how="inner",
     )
+    data = data.dropna()
+    return data
+
+
+def rename_columns(data):
+    data = data.rename(columns={"Year": "year"})
     return data
