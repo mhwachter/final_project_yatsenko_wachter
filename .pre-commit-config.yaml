@@ -103,7 +103,7 @@ repos:
     rev: v2.2.2
     hooks:
       - id: codespell
-        exclude: src/replication_ppr/data/cia_factbook.csv|src/replication_ppr/data/countries_list.csv
+        exclude: src/replication_ppr/data/cia_factbook.csv|src/replication_ppr/data/countries_list.csv/src/wb_classification.csv
         args:
           - --skip="**.ipynb"
   - repo: https://github.com/asottile/setup-cfg-fmt
