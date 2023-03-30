@@ -1,3 +1,4 @@
+"""Python script defines various Pytask tasks and defines order how to run R models."""
 import pytask
 
 from replication_ppr.config import BLD, SRC
