@@ -1,3 +1,4 @@
+"""Function to create Direction of Trade dataset."""
 import country_converter as coco
 import numpy as np
 import pandas as pd
