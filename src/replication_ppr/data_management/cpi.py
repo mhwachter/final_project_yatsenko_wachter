@@ -1,4 +1,4 @@
-"""Python script to import CPI dataset."""
+"""Python script to import CPI dataset.''."""
 import pandas as pd
 
 cpi = pd.read_csv("../data/cpi_urban_consumers.csv")
