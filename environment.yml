@@ -29,6 +29,7 @@ dependencies:
   - beautifulsoup4
   - selenium
   - numpy
+  - r_base
   - r-data.table
   - r-fixest
   - r-plm
