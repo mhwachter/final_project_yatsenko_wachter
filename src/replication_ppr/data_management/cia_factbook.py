@@ -10,13 +10,14 @@ cc = coco.CountryConverter()
 
 
 def get_cia_factbook_countries():
-    """Web scraps the CIA website and creates a list of countries dataset.
+    """Creates a list of countries with information sourced from CIA World Fact Book
+    website.
 
     Args:
         none.
 
     Returns:
-        data (Data Frame).
+        data (pd.DataFrame): A dataset containing list of countries from CIA website.
 
     """
     browser = webdriver.Firefox()
@@ -37,11 +38,11 @@ def correct_country_names(data, countries_list):
     """Corrects country names according to ISO standard.
 
     Args:
-       data (Data Frame): Data from CIA website.
-       countries_list (Data Frame): List of countries from the original paper.
+       data (pd.DataFrame): Data from CIA website.
+       countries_list (pd.DataFrame): List of countries from the original paper.
 
     Returns:
-       data (Data Frame): Returns the corrected dataset.
+       data (pd.DataFrame): Returns the corrected dataset with standardized ISO3 country names.
 
     """
     data["country"] = data["country"].str.lower()
@@ -60,13 +61,14 @@ def correct_country_names(data, countries_list):
 
 
 def scrape_cia_factbook_data(countries_cia):
-    """Web scraps the CIA website and creates a dataset with additional information.
+    """Creates dataset with additional country information such as geographic
+    coordinates,area, land borders and etc. sourced from CIA website .
 
     Args:
-        countries_cia (Data Frame): Uses the list of countries from the CIA website .
+        countries_cia (pd.DataFrame): Uses the list of countries from the CIA website .
 
     Returns:
-        data (Data Frame):Returns the corrected dataset.
+        data (pd.DataFrame):Returns the dataset with additional columns.
 
     """
     d = []
@@ -117,13 +119,13 @@ def scrape_cia_factbook_data(countries_cia):
 
 
 def cia_factbook_cleaning(data):
-    """Cleans,transform data extracted from the CIA website.
+    """Cleans,transforms data extracted from the CIA website.
 
     Args:
-        data (Data Frame):Uses the created dataset.
+        data (pd.DataFrame):Uses the created dataset.
 
     Returns:
-        data (Data Frame):Returns the cleaned dataset.
+        data (pd.DataFrame):Returns the cleaned  and standardized according to ISO3 dataset.
 
     """
     data["island"] = data["island"].str.replace(",", "")
