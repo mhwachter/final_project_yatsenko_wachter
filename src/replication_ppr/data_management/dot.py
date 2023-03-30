@@ -6,6 +6,18 @@ cc = coco.CountryConverter()
 
 
 def create_dot_final(data, cpi, countries_list):
+    """Creates a final data frame containing trade data, CPI data, and country ISO
+    codes.
+
+    Args:
+        data (DataFrame): A dataset containing raw trade data.
+        cpi (DataFrame): A dataset containing CPI data.
+        countries_list (DataFrame): A dataset containing country ISO codes.
+
+    Returns:
+        data (DataFrame): A cleaned and merged dataset containing trade data, CPI data, and country ISO codes.
+
+    """
     data = data[
         [
             "Country Name",
