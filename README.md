@@ -31,14 +31,15 @@ To run this project the following system requirements need to be fulfilled:
 
 ## Usage
 
-To get started, clone the repository
+To get started, navigate to the folder you would like to save the project in. Then,
+clone the repository
 
 ```console
 $ git clone https://github.com/mhwachter/final_project_yatsenko_wachter
 ```
 
-navigate to the root directory of the project and then create and activate the
-environment with
+navigate to the root directory of the project and create and activate the environment
+with
 
 ```console
 $ conda env create -f environment.yml
