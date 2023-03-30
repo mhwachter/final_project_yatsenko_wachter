@@ -1,9 +1,20 @@
+"""Function to load dataset and manages dataset according to project standards."""
+
 import country_converter as coco
 
 cc = coco.CountryConverter()
 
 
 def extend_original_data(data):
+    """Corrects the original dataset according to our classifications.
+
+    Args:
+       data (pd.DataFrame) : Original dataset from a paper written by Andrew K. Rose
+
+    Returns:
+        data (pd.DataFrame):Returns merged and corrected dataset according to ISO3.
+
+    """
     data["cty1_str"] = data["cty1"].apply(str)
     data["cty2_str"] = data["cty2"].apply(str)
 
