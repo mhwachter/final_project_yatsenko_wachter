@@ -1,3 +1,4 @@
+"""Python script to import original dataset and adjust it according to ISO3 standard."""
 import country_converter as coco
 import pandas as pd
 
