@@ -157,7 +157,7 @@ def add_original_variables(data, original_data):
         ],
         left_on="pair_year_id",
         right_on="pair_year_id_ISO3",
-        how="inner",
+        how="left",
     )
     data = data.dropna()
     return data

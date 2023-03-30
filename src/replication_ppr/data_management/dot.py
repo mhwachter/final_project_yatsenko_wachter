@@ -124,6 +124,7 @@ def create_dot_final(data, cpi, countries_list):
             "ltrade",
         ]
     ]
+    data = data.drop_duplicates("pair_year_id")
 
     data = data.reset_index(drop=True)
     return data
