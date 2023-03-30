@@ -1,3 +1,4 @@
+"""Python Script creates,merges and cleaning the WTO dataset."""
 import pandas as pd
 
 dist = pd.read_csv("../../../bld/python/data/distance_final.csv")

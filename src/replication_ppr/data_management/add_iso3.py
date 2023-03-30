@@ -1,3 +1,4 @@
+"Python script to create one standard for various country names across dataset."
 import country_converter as coco
 import pandas as pd
 
