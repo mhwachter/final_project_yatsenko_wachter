@@ -31,11 +31,11 @@ def task_final_r4_own():
     pass
 
 
-# @pytask.mark.depends_on(BLD / "R" / "models" / "tab5_models_created_data.rds")
-# @pytask.mark.r(script=SRC / "final" / "table5_results.r")
-# @pytask.mark.produces(BLD / "R" / "tables" / "tab5_results_created_data.tex")
-# def task_final_r5_own():
-#     pass
+@pytask.mark.depends_on(BLD / "R" / "models" / "tab5_models_created_data.rds")
+@pytask.mark.r(script=SRC / "final" / "table5_results.r")
+@pytask.mark.produces(BLD / "R" / "tables" / "tab5_results_created_data.tex")
+def task_final_r5_own():
+    pass
 
 
 # @pytask.mark.depends_on(BLD / "R" / "models" / "tab6_models_created_data.rds")
