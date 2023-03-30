@@ -10,12 +10,12 @@ def create_dot_final(data, cpi, countries_list):
     codes.
 
     Args:
-        data (DataFrame): A dataset containing raw trade data.
-        cpi (DataFrame): A dataset containing CPI data.
-        countries_list (DataFrame): A dataset containing country ISO codes.
+        data (pd.DataFrame): A dataset containing raw trade data.
+        cpi (pd.DataFrame): A dataset containing CPI data.
+        countries_list (pd.DataFrame): A dataset containing country ISO codes.
 
     Returns:
-        data (DataFrame): A cleaned and merged dataset containing trade data, CPI data, and country ISO codes.
+        data (pd.DataFrame): A cleaned and merged dataset containing trade data, CPI data, and country ISO codes.
 
     """
     data = data[
