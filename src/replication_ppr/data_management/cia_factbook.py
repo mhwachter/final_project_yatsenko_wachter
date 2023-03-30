@@ -1,3 +1,4 @@
+"""Functions to extract,clean data from CIA Fact Book website."""
 import country_converter as coco
 import pandas as pd
 import numpy as np
@@ -31,7 +32,6 @@ def get_cia_factbook_countries():
         element.click()
 
     data = pd.DataFrame(data)
-    browser.close()
     return data
 
 
