@@ -14,6 +14,7 @@ def data():
     rta = pd.read_csv(SRC / "data" / "rta.csv")
     cpi = pd.read_csv(SRC / "data" / "cpi_urban_consumers.csv")
     original_data = pd.read_csv(BLD / "python" / "data" / "original_extended.csv")
+    data_final = pd.read_csv(BLD / "python" / "data" / "data_final.csv")
     countries_list = pd.read_csv(SRC / "data" / "countries_list.csv")
     data = {
         "dot": dot,
@@ -21,6 +22,7 @@ def data():
         "original_data": original_data,
         "cpi": cpi,
         "countries_list": countries_list,
+        "data_final": data_final,
     }
     return data
 
@@ -60,8 +62,14 @@ def test_numerical(data):
     ), "Certain columns that should be numeric are not."
 
 
-def test_unique_country_year_pairs(data):
+def test_unique_country_year_pairs1(data):
     assert data["original_data"][
+        "pair_year_id_ISO3"
+    ].is_unique, "There are multiple observation for a country pair in a given year, which should not be the case."
+
+
+def test_unique_country_year_pairs2(data):
+    assert data["data_final"][
         "pair_year_id_ISO3"
     ].is_unique, "There are multiple observation for a country pair in a given year, which should not be the case."
 
@@ -71,9 +79,9 @@ def test_dot(data):
     cpi = data["cpi"]
     countries_list = data["countries_list"]
     dot = create_dot_final(data=dot, cpi=cpi, countries_list=countries_list)
-    assert all(
-        dot["pair_year_id"].value_counts() <= 2,
-    ), "For a given country pair there are more than two observations."
+    assert dot[
+        "pair_year_id"
+    ].is_unique, "There are multiple observation for a country pair in a given year, which should not be the case."
 
 
 @pytest.fixture()
