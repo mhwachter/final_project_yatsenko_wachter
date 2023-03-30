@@ -22,12 +22,26 @@ data is used:
 - World Bank:
 - Bureau of Labor Statistics:
 
+## Requirements
+
+To run this project the following system requirements need to be fulfilled:
+
+- Conda (https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html)
+- LaTeX (https://www.tug.org/texlive/)
+
 ## Usage
 
-To get started, create and activate the environment with
+To get started, clone the repository
 
 ```console
-$ conda/mamba env create
+$ git clone https://github.com/mhwachter/final_project_yatsenko_wachter
+```
+
+navigate to the root directory of the project and then create and activate the
+environment with
+
+```console
+$ conda env create -f environment.yml
 $ conda activate replication_ppr
 ```
 
