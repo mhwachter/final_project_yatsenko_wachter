@@ -164,5 +164,14 @@ def add_original_variables(data, original_data):
 
 
 def rename_columns(data):
+    """Renames a column.
+
+    Args:
+        data(pd.DataFrame):final dataset.
+
+    Returns:
+        data (pd.DataFrame):Dataset with renamed column.
+
+    """
     data = data.rename(columns={"Year": "year"})
     return data
