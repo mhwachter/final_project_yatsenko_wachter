@@ -1,3 +1,5 @@
+import urllib.request
+
 import numpy as np
 import pandas as pd
 import pytest
@@ -28,9 +30,7 @@ def data():
 
 
 def test_no_na(data):
-    assert (
-        data["original_data"].isna().any().any() is False
-    ), "There are NAs in the data frame."
+    assert data["original_data"].notna().all().all(), "There are NAs in the data frame."
 
 
 def test_numerical(data):
@@ -74,3 +74,13 @@ def test_dot(data):
     assert all(
         dot["pair_year_id"].value_counts() <= 2,
     ), "For a given country pair there are more than two observations."
+
+
+@pytest.fixture()
+def cia_url():
+    url = "https://www.cia.gov/the-world-factbook/"
+    return url
+
+
+def test_site_reachable(cia_url):
+    urllib.request.urlopen(cia_url).getcode() == 200, "Site is not reachable"
