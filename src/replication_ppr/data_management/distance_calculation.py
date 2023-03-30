@@ -11,6 +11,15 @@ geolocator = Nominatim(user_agent="my-app")
 
 # define function to get latitude and longitude values for a country
 def get_lat_long(country):
+    """Looks up for latitude and longitude of countries.
+
+    Args:
+       country (str): List of countries.
+
+    Returns:
+       tuple or None
+
+    """
     location = geolocator.geocode(country, timeout=None)
     if location is not None:
         return (location.latitude, location.longitude)
@@ -24,6 +33,15 @@ def get_lat_long(country):
 
 
 def get_coordinates(data):
+    """Add latitude and longitude coordinates to a DataFrame based on country names.
+
+    Args:
+       data (data frame): List of countries.
+
+    Returns:
+       data (data frame): copy of dataset with two additional columns containing latitude and longitude.
+
+    """
     data["Latitude"] = data["country"].apply(
         lambda x: get_lat_long(x)[0] if get_lat_long(x) is not None else None,
     )
@@ -34,6 +52,17 @@ def get_coordinates(data):
 
 
 def calculate_distance(data):
+    """Calculate the distances between pairs of countries and return a list of results.
+
+    Args:
+       data (data frame): List of countries.
+
+    Returns:
+        distance (list of tuples): A list of tuples, where each tuple contains the names of two countries, a pair code,
+        the distance between the countries in kilometers and miles, and the logarithmic form
+        of the distances in kilometers and miles.
+
+    """
     distances = []
     pair_id = 1
     for i in range(len(data)):
@@ -68,6 +97,18 @@ def calculate_distance(data):
 
 
 def create_distance_data(data):
+    """Create a data frame from a distance list.
+
+    Args:
+       data (list of tuples): A list of tuples, where each tuple contains the names of two countries, a pair code,
+        the distance between the countries in kilometers and miles, and the logarithmic form
+        of the distances in kilometers and miles.
+
+    Returns:
+        distance_df (data frame): Data frame the distance data, with columns "Country 1", "Country 2",
+        "Pair ID", "Distance (km)", "Distance (miles)", "Log Distance (km)", and "ldist".
+
+    """
     distance_df = pd.DataFrame(
         data,
         columns=[
@@ -84,28 +125,40 @@ def create_distance_data(data):
 
 
 def distance_data_cleaning(data):
-    data = data.rename(columns={"Country 1": "ctry1", "Country 2": "ctry2"})
+    """Cleans and renames column of distance data frame to align with original dataset.
 
-    data["ctry1_ISO3"] = cc.pandas_convert(series=data["ctry1"], to="ISO3")
-    data["ctry2_ISO3"] = cc.pandas_convert(series=data["ctry2"], to="ISO3")
+    Args:
+       data (data frame): A data frame with the distance data, with columns "Country 1", "Country 2",
+        "Pair ID", "Distance (km)", "Distance (miles)", "Log Distance (km)", and "ldist".
 
-    data["pair_id"] = data[["ctry1_ISO3", "ctry2_ISO3"]].values.tolist()
-    data["pair_id"] = data["pair_id"].apply(sorted).str.join("")
+    Returns:
+        distance_df (data frame): cleaned data with renamed columns and ISO3 standard names.
 
-    data = data.drop("Pair ID", axis=1)
-    data = data[
-        [
-            "pair_id",
-            "ctry1",
-            "ctry2",
-            "ctry1_ISO3",
-            "ctry2_ISO3",
-            "Distance (km)",
-            "Distance (miles)",
-            "Log Distance (km)",
-            "ldist",
-        ]
+    """
+
+
+data = data.rename(columns={"Country 1": "ctry1", "Country 2": "ctry2"})
+
+data["ctry1_ISO3"] = cc.pandas_convert(series=data["ctry1"], to="ISO3")
+data["ctry2_ISO3"] = cc.pandas_convert(series=data["ctry2"], to="ISO3")
+
+data["pair_id"] = data[["ctry1_ISO3", "ctry2_ISO3"]].values.tolist()
+data["pair_id"] = data["pair_id"].apply(sorted).str.join("")
+
+data = data.drop("Pair ID", axis=1)
+data = data[
+    [
+        "pair_id",
+        "ctry1",
+        "ctry2",
+        "ctry1_ISO3",
+        "ctry2_ISO3",
+        "Distance (km)",
+        "Distance (miles)",
+        "Log Distance (km)",
+        "ldist",
     ]
+]
 
-    data = data.reset_index()
-    return data
+data = data.reset_index()
+return data
