@@ -1,3 +1,4 @@
+"""Functions to merge final dataset."""
 import numpy as np
 import pandas as pd
 
