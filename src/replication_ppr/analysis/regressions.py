@@ -1,3 +1,4 @@
+"""File that creates tables for OLS regressions."""
 import pandas as pd
 import statsmodels.api as sm
 from linearmodels import PanelOLS, RandomEffects
