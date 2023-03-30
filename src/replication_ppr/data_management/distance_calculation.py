@@ -6,10 +6,9 @@ from geopy.geocoders import Nominatim
 
 cc = coco.CountryConverter()
 
-# create geocoder object
 geolocator = Nominatim(user_agent="my-app")
 
-# define function to get latitude and longitude values for a country
+
 def get_lat_long(country):
     """Looks up for latitude and longitude of countries.
 
@@ -25,11 +24,6 @@ def get_lat_long(country):
         return (location.latitude, location.longitude)
     else:
         return None
-
-
-# create dataframe
-
-#     "../data/cia_factbook.csv",
 
 
 def get_coordinates(data):
@@ -77,9 +71,9 @@ def calculate_distance(data):
                     (data["Latitude"][i], data["Longitude"][i]),
                     (data["Latitude"][j], data["Longitude"][j]),
                 ).km
-                d_miles = dist_km * 0.621371  # Convert km to miles
+                d_miles = dist_km * 0.621371
                 ldist_km = np.log(dist_km)
-                ldist = np.log(d_miles)  # Take the logarithmic form
+                ldist = np.log(d_miles)
                 pair_code = pair_id
                 pair_id += 1
                 distances.append(
