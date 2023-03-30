@@ -1,3 +1,4 @@
+"""Python script requests data from World Bank."""
 import wbgapi as wb
 
 data_wb = wb.data.DataFrame(
