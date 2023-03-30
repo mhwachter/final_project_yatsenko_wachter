@@ -1,3 +1,4 @@
+"""Python script defines Pytask tasks to be executed in R."""
 import pytask
 
 from replication_ppr.config import BLD, SRC
