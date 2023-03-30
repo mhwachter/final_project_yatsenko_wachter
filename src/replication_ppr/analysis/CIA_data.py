@@ -1,3 +1,4 @@
+"""Python file to scrap list of countries from CIA archived website."""
 import os
 
 from bs4 import BeautifulSoup
