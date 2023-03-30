@@ -129,30 +129,28 @@ def distance_data_cleaning(data):
         distance_df (data frame): cleaned data with renamed columns and ISO3 standard names.
 
     """
+    data = data.rename(columns={"Country 1": "ctry1", "Country 2": "ctry2"})
 
+    data["ctry1_ISO3"] = cc.pandas_convert(series=data["ctry1"], to="ISO3")
+    data["ctry2_ISO3"] = cc.pandas_convert(series=data["ctry2"], to="ISO3")
 
-data = data.rename(columns={"Country 1": "ctry1", "Country 2": "ctry2"})
+    data["pair_id"] = data[["ctry1_ISO3", "ctry2_ISO3"]].values.tolist()
+    data["pair_id"] = data["pair_id"].apply(sorted).str.join("")
 
-data["ctry1_ISO3"] = cc.pandas_convert(series=data["ctry1"], to="ISO3")
-data["ctry2_ISO3"] = cc.pandas_convert(series=data["ctry2"], to="ISO3")
-
-data["pair_id"] = data[["ctry1_ISO3", "ctry2_ISO3"]].values.tolist()
-data["pair_id"] = data["pair_id"].apply(sorted).str.join("")
-
-data = data.drop("Pair ID", axis=1)
-data = data[
-    [
-        "pair_id",
-        "ctry1",
-        "ctry2",
-        "ctry1_ISO3",
-        "ctry2_ISO3",
-        "Distance (km)",
-        "Distance (miles)",
-        "Log Distance (km)",
-        "ldist",
+    data = data.drop("Pair ID", axis=1)
+    data = data[
+        [
+            "pair_id",
+            "ctry1",
+            "ctry2",
+            "ctry1_ISO3",
+            "ctry2_ISO3",
+            "Distance (km)",
+            "Distance (miles)",
+            "Log Distance (km)",
+            "ldist",
+        ]
     ]
-]
 
-data = data.reset_index()
-return data
+    data = data.reset_index()
+    return data
