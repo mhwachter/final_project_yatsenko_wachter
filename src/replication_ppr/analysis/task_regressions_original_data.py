@@ -1,3 +1,4 @@
+"""Python script defines various Pytask tasks with self-sourced data."""
 import pytask
 
 from replication_ppr.config import BLD, SRC
