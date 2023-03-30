@@ -1,3 +1,4 @@
+"""Function calculates pair-wise distance between countries,converts to log form."""
 import country_converter as coco
 import numpy as np
 import pandas as pd
@@ -30,10 +31,10 @@ def get_coordinates(data):
     """Add latitude and longitude coordinates to a DataFrame based on country names.
 
     Args:
-       data (data frame): List of countries.
+       data (pd.DataFrame): List of countries.
 
     Returns:
-       data (data frame): copy of dataset with two additional columns containing latitude and longitude.
+       data (pd.DataFrame): A copy of dataset with two additional columns containing latitude and longitude.
 
     """
     data["Latitude"] = data["country"].apply(
@@ -49,7 +50,7 @@ def calculate_distance(data):
     """Calculate the distances between pairs of countries and return a list of results.
 
     Args:
-       data (data frame): List of countries.
+       data (pd.DataFrame): List of countries.
 
     Returns:
         distance (list of tuples): A list of tuples, where each tuple contains the names of two countries, a pair code,
@@ -99,7 +100,7 @@ def create_distance_data(data):
         of the distances in kilometers and miles.
 
     Returns:
-        distance_df (data frame): Data frame the distance data, with columns "Country 1", "Country 2",
+        distance_df (pd.DataFrame): Data frame the distance data, with columns "Country 1", "Country 2",
         "Pair ID", "Distance (km)", "Distance (miles)", "Log Distance (km)", and "ldist".
 
     """
@@ -122,11 +123,11 @@ def distance_data_cleaning(data):
     """Cleans and renames column of distance data frame to align with original dataset.
 
     Args:
-       data (data frame): A data frame with the distance data, with columns "Country 1", "Country 2",
+       data (pd.DataFrame): A data frame with the distance data, with columns "Country 1", "Country 2",
         "Pair ID", "Distance (km)", "Distance (miles)", "Log Distance (km)", and "ldist".
 
     Returns:
-        distance_df (data frame): cleaned data with renamed columns and ISO3 standard names.
+        distance_df (pd.DataFrame): cleaned data with renamed columns and ISO3 standard names.
 
     """
     data = data.rename(columns={"Country 1": "ctry1", "Country 2": "ctry2"})
