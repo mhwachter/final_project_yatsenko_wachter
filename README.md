@@ -24,7 +24,7 @@ to replicate it that way. The following data is used:
 - World Bank: World Development Indivators
 - Bureau of Labor Statistics: Consumer Price Index
 
-The projects creates a final document called `replication_ppr.` pdf with all regression
+The projects creates a final document called `replication_ppr.pdf` with all regression
 tables we were able to replicate. Because the analysis of the original paper was
 conducted with Stata and ours was primarily done with R, the results can vary a bit
 (especially since it involves unbalanced panel data). The paper contains two sections:
@@ -33,12 +33,31 @@ Sourced Data" with the results obtained from our own data.
 
 ## Requirements
 
-To run this project working version of the following dependencies have to be present:
+To run this project working versions of the following dependencies have to be present:
 
 - Conda (https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html)
 - LaTeX (https://www.tug.org/texlive/)
 - Git (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - Firefox (https://www.mozilla.org/en-US/firefox/new/)
+- R (https://www.r-project.org)
+
+In addition, the following R Packages are required:
+
+- jsonlite
+- data.table
+- fixest
+- plm
+- AER
+- quantreg
+- modelsummary
+- kableExtra
+
+You can install them via the following command in the R Terminal:
+
+```R
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(jsonlite, data.table, fixest, plm, AER, quantreg, modelsummary, kableExtra)
+```
 
 ## Usage
 
@@ -46,21 +65,24 @@ To get started, in a terminal navigate to the location you would like to save th
 project in. Then, clone the repository
 
 ```console
-$ git clone https://github.com/mhwachter/final_project_yatsenko_wachter
+git clone https://github.com/mhwachter/final_project_yatsenko_wachter
 ```
 
 navigate to the root directory of the project and create and activate the environment
 with
 
 ```console
-$ conda env create -f environment.yml
-$ conda activate replication_ppr
+conda env create -f environment.yml
+```
+
+```console
+conda activate replication_ppr
 ```
 
 To build the project, type
 
 ```console
-$ pytask
+pytask
 ```
 
 ### Notes
