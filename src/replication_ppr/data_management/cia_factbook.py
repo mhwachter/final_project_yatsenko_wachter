@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from webdriver_manager.firefox import GeckoDriverManager
 
 cc = coco.CountryConverter()
 
@@ -21,7 +22,7 @@ def get_cia_factbook_countries():
         data (pd.DataFrame): A dataset containing list of countries from CIA website.
 
     """
-    browser = webdriver.Firefox()
+    browser = webdriver.Firefox(executable_path=GeckoDriverManager().install())
     browser.get("https://www.cia.gov/the-world-factbook/countries/")
     element = browser.find_element(By.CLASS_NAME, "pagination__arrow-right")
     data = []
@@ -32,6 +33,7 @@ def get_cia_factbook_countries():
         element.click()
 
     data = pd.DataFrame(data)
+    browser.close()
     return data
 
 
