@@ -13,7 +13,6 @@ dependencies:
   - pip >=21.1
   - plotly>=5.13.0
   - pre-commit
-  - pytask-r
   - pytask-latex
   - pytask-parallel
   - pytask>=0.2
@@ -26,21 +25,12 @@ dependencies:
   - setuptools_scm
   - statsmodels
   - toml
-  - requests
-  - beautifulsoup4
   - selenium
-  - numpy
-  - r_base
-  - r-data.table
-  - r-fixest
-  - r-plm
-  - r-AER
-  - r-jsonlite
-  - r-quantreg
-  - r-kableExtra
-  - r-modelsummary
+  - geopy
+  - geckodriver
   - pip:
       - -e .
       - kaleido
-      - country_converter
-      - geopy
+      - country-converter
+      - webdriver-manager
+      - pytask-r
