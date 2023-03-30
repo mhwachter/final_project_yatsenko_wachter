@@ -31,6 +31,7 @@ def get_cia_factbook_countries():
         element.click()
 
     data = pd.DataFrame(data)
+    browser.close()
     return data
 
 
