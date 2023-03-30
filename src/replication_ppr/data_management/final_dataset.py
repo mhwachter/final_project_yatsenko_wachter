@@ -6,14 +6,14 @@ def do_merge(dot, rta, dist, wb_reg_inc, cia_fact):
     """Merges final dataset.
 
     Args:
-        dot (data Frame) : Direction of trade dataset.
-        rta (data Frame) : Regional Trade agreements dataset.
-        dist (data frame) : Distance between countries dataset.
-        wb_reg_inc (data Frame): World Bank income classification dataset.
-        cia_fact (data Frame): CIA fact-book dataset.
+        dot (pd.DataFrame) : Direction of trade dataset.
+        rta (pd.DataFrame) : Regional Trade agreements dataset.
+        dist (pd.DataFrame) : Distance between countries dataset.
+        wb_reg_inc (pd.DataFrame): World Bank income classification dataset.
+        cia_fact (pd.DataFrame): CIA fact-book dataset.
 
     Returns:
-        data (Data Frame):Returns merged dataset.
+        data (pd.DataFrame):Returns merged dataset.
 
     """
     data_final = pd.merge(dot, rta, how="left", on="pair_year_id", suffixes=("", "_y"))
@@ -72,10 +72,10 @@ def calc_additional_vars(data):
     """Creates additional dummy variables.
 
     Args:
-      data (data frame) :uses final dataset.
+      data (pd.DataFrame) :uses final dataset.
 
     Returns:
-        data (Data Frame):Returns merged dataset.
+        data (pd.DataFrame):Returns merged dataset.
 
     """
     data["cty1_str"] = data["cty1"].apply(str)
@@ -100,11 +100,11 @@ def add_original_variables(data, original_data):
     """Merges self-sourced dataset with cut version of dataset used in original paper.
 
     Args:
-        data(data frame):self-sourced dataset.
-        original_data (data frame): dataset used by a paper author.
+        data(pd.DataFrame):self-sourced dataset.
+        original_data (pd.DataFrame): dataset used by a paper author.
 
     Returns:
-        data (Data Frame):Returns merged final dataset.
+        data (pd.DataFrame):Returns merged final dataset.
 
     """
     data = pd.merge(
