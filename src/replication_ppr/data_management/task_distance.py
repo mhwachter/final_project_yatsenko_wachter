@@ -2,8 +2,7 @@
 
 import pandas as pd
 import pytask
-
-from replication_ppr.config import BLD, SRC
+from replication_ppr.config import BLD
 from replication_ppr.data_management.distance_calculation import (
     calculate_distance,
     create_distance_data,
@@ -19,7 +18,7 @@ from replication_ppr.data_management.distance_calculation import (
 )
 @pytask.mark.produces(
     {
-        "coordinates": SRC / "data" / "coordinates.csv",
+        "coordinates": BLD / "python" / "data" / "coordinates.csv",
     },
 )
 def task_coordinates(depends_on, produces):
@@ -30,7 +29,7 @@ def task_coordinates(depends_on, produces):
 
 @pytask.mark.depends_on(
     {
-        "coordinates": SRC / "data" / "coordinates.csv",
+        "coordinates": BLD / "python" / "data" / "coordinates.csv",
     },
 )
 @pytask.mark.produces(
