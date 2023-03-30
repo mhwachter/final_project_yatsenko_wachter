@@ -1,31 +1,9 @@
+"""Function creates,cleans and modifies RTA dataset."""
 import zipfile
 
 import country_converter as coco
 
 cc = coco.CountryConverter()
-
-# with zipfile.ZipFile("../data/rta.csv.zip", "r") as zip_ref:
-
-
-#         "pair_id",
-#         "pair_year_id",
-#         "Year",
-#         "ctry1",
-#         "ctry2",
-#         "ctry1_ISO3",
-#         "ctry2_ISO3",
-#         "rta",
-#         "eu",
-#         "cer",
-#         "patcra",
-#         "usaisr",
-#         "cacm",
-#         "caricomg",
-#         "mercosurg",
-#         "mercosurs",
-#         "sparteca",
-#         "eea",
-#         "nafta",
 
 
 def unzip_rta_data(zip, unzip):
