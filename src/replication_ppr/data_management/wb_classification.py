@@ -1,3 +1,4 @@
+"""Function creates Worldbank region and income classification."""
 import country_converter as coco
 import pandas as pd
 
@@ -5,6 +6,17 @@ cc = coco.CountryConverter()
 
 
 def get_wb_classification(wb_classification, least_developed):
+    """Get World Bank classification data for countries and add dummy variables for
+    region and income group.
+
+    Args:
+        wb_classification (pandas.DataFrame): Dataframe containing World Bank classification data.
+        least_developed (pandas.DataFrame): Dataframe containing list of least developed countries.
+
+    Returns:
+        pandas.DataFrame: Dataframe with World Bank classification data and dummy variables for region and income group.
+
+    """
     wb_classification["Country"] = cc.pandas_convert(
         series=wb_classification["Country"],
         to="name_short",

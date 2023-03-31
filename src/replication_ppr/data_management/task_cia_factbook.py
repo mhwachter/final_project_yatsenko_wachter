@@ -2,7 +2,6 @@
 
 import pandas as pd
 import pytask
-
 from replication_ppr.config import BLD, SRC
 from replication_ppr.data_management.cia_factbook import (
     cia_factbook_cleaning,

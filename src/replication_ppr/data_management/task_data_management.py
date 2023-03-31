@@ -2,7 +2,6 @@
 
 import pandas as pd
 import pytask
-
 from replication_ppr.config import BLD, SRC
 from replication_ppr.data_management.dot import create_dot_final
 from replication_ppr.data_management.final_dataset import (
