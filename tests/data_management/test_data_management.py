@@ -8,6 +8,7 @@ from replication_ppr.config import BLD, SRC
 
 from src.replication_ppr.data_management.dot import create_dot_final
 from src.replication_ppr.data_management.original_data import extend_original_data
+from src.replication_ppr.data_management.rta import create_rta_final, unzip_rta_data
 from src.replication_ppr.data_management.wb_classification import get_wb_classification
 
 
@@ -17,6 +18,8 @@ def data():
     rta = pd.read_csv(SRC / "data" / "rta.csv")
     cpi = pd.read_csv(SRC / "data" / "cpi_urban_consumers.csv")
     original_data = pd.read_csv(SRC / "data" / "original_data_paper.csv")
+    rta_zip = SRC / "data" / "rta.csv.zip"
+    rta_unzip = SRC / "data"
     data_final = pd.read_csv(BLD / "python" / "data" / "data_final.csv")
     countries_list = pd.read_csv(SRC / "data" / "countries_list.csv")
     data = {
@@ -26,6 +29,8 @@ def data():
         "cpi": cpi,
         "countries_list": countries_list,
         "data_final": data_final,
+        "rta_zip": rta_zip,
+        "rta_unzip": rta_unzip,
     }
     return data
 
@@ -82,6 +87,14 @@ def test_dot(data):
     countries_list = data["countries_list"]
     dot = create_dot_final(data=dot, cpi=cpi, countries_list=countries_list)
     assert dot[
+        "pair_year_id"
+    ].is_unique, "There are multiple observation for a country pair in a given year, which should not be the case."
+
+
+def test_rta(data):
+    unzip_rta_data(zip=data["rta_zip"], unzip=data["rta_unzip"])
+    rta = create_rta_final(data=data["rta"], countries_list=data["countries_list"])
+    assert rta[
         "pair_year_id"
     ].is_unique, "There are multiple observation for a country pair in a given year, which should not be the case."
 
