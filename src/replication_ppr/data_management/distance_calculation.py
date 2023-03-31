@@ -3,6 +3,7 @@ import country_converter as coco
 import numpy as np
 import pandas as pd
 from geopy.distance import distance
+from geopy.exc import GeocoderTimedOut
 from geopy.geocoders import Nominatim
 
 cc = coco.CountryConverter()
@@ -20,11 +21,14 @@ def get_lat_long(country):
        tuple or None
 
     """
-    location = geolocator.geocode(country, timeout=None)
-    if location is not None:
-        return (location.latitude, location.longitude)
-    else:
-        return None
+    try:
+        location = geolocator.geocode(country, timeout=1000)
+        if location is not None:
+            return (location.latitude, location.longitude)
+        else:
+            return None
+    except GeocoderTimedOut:
+        return get_lat_long(country)
 
 
 def get_coordinates(data):
