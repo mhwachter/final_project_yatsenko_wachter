@@ -13,7 +13,7 @@ def check_dependency_call(dependency):
 def test_R_installed():
     assert check_dependency_call(
         dependency="R",
-    ), "R is not installed. Make sure that it is installed and in the path"
+    ), "R is not installed. Make sure that it is installed and in the path."
 
 
 def test_pdflatex_installed():
