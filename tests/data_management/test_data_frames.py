@@ -27,10 +27,6 @@ def data():
     return data
 
 
-# @pytest.fixture()
-# def original_data():
-
-
 def test_no_na(data):
     assert data["original_data"].notna().all().all(), "There are NAs in the data frame."
 
