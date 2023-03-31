@@ -29,7 +29,7 @@ def unzip_rta_data(zip: str, unzip: str) -> None:
 
 
 def create_rta_final(data, countries_list):
-    """Preprocesses and cleans a pandas DataFrame containing international trade data.
+    """Processes and cleans a pandas DataFrame containing international trade data.
 
     Args:
         data (pd.DataFrame): The input DataFrame containing international trade data. The DataFrame should have columns named "exporter", "importer", and "year".
