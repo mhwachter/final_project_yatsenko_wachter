@@ -52,7 +52,7 @@ In addition, the following R Packages are required:
 - modelsummary
 - kableExtra
 
-You can install them via the following command in the R Terminal:
+You can install them via the following command in R:
 
 ```R
 if (!require("pacman")) install.packages("pacman")
@@ -94,10 +94,11 @@ The project has been tested on macOS Ventura 13.3.
 The `src` directory contains all files needed for the replication and is organised as
 follows:
 
-- `data_management`
-- `data`
-- `analysis`
-- `final`
+- `data_management`: Contains all files for creating the dataset sourced on our own.
+- `data`: Contains all datasets that have to be downloaded manually.
+- `analysis`: Contains the R Scripts for running the regressions and estimating the
+  models.
+- `final`: Creates the LaTeX output for all regression tables.
 
 ## Credits
 
