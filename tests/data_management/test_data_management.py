@@ -15,7 +15,6 @@ from src.replication_ppr.data_management.wb_classification import get_wb_classif
 
 @pytest.fixture()
 def data():
-    """Loads several datasets to the project."""
     dot = pd.read_csv(SRC / "data" / "DOT.csv")
     rta = pd.read_csv(SRC / "data" / "rta.csv")
     cpi = pd.read_csv(SRC / "data" / "cpi_urban_consumers.csv")
@@ -36,13 +35,11 @@ def data():
 
 
 def test_no_na(data):
-    """Checks if there are NAs in the dataset."""
     original_extended = extend_original_data(data=data["original_data"])
     assert original_extended.notna().all().all(), "There are NAs in the data frame."
 
 
 def test_numerical(data):
-    """Test that certain columns in the extended original_data DataFrame are numeric."""
     original_extended = extend_original_data(data=data["original_data"])
     assert all(
         np.issubdtype(dtype, np.number)
@@ -71,7 +68,6 @@ def test_numerical(data):
 
 
 def test_unique_country_year_pairs1(data):
-    """Test that each country-year pair in the extended original_data DataFrame is unique."""
     original_extended = extend_original_data(data=data["original_data"])
     assert original_extended[
         "pair_year_id_ISO3"
@@ -79,7 +75,6 @@ def test_unique_country_year_pairs1(data):
 
 
 def test_dot(data):
-    """Test that the 'pair_year_id' column in the 'dot' DataFrame is unique."""
     dot = data["dot"]
     cpi = data["cpi"]
     countries_list = data["countries_list"]
@@ -90,7 +85,7 @@ def test_dot(data):
 
 
 def test_rta(data):
-     """Test that the 'pair_year_id' column in the 'rta' DataFrame is unique."""
+
     unzip_rta_data(zip=data["rta_zip"], unzip=data["rta_unzip"])
     rta = create_rta_final(data=data["rta"], countries_list=data["countries_list"])
     assert rta[
@@ -106,12 +101,10 @@ def cia_url():
 
 
 def test_site_reachable(cia_url):
-    """Tests whether the CIA World Factbook website is reachable."""
     urllib.request.urlopen(cia_url).getcode() == 200, "Site is not reachable"
 
 
 def test_wb_classification():
-    """Tests the `get_wb_classification` function."""
     wb_data = pd.DataFrame(
         {
             "Country": [
