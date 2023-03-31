@@ -22,6 +22,8 @@ from replication_ppr.data_management.cia_factbook import (
     },
 )
 def task_cia_factbook(depends_on, produces):
+    """This function scrapes data from the CIA World Factbook website for a list of countries,
+cleans the data, and saves the output."""
     countries_cia = get_cia_factbook_countries()
     countries_list = pd.read_csv(depends_on["countries_list"])
     countries_cia = correct_country_names(

@@ -167,7 +167,7 @@ def rename_columns(data):
     """Renames a column.
 
     Args:
-        data(pd.DataFrame):final dataset.
+        data (pd.DataFrame):final dataset.
 
     Returns:
         data (pd.DataFrame):returns final dataset with renamed column.
