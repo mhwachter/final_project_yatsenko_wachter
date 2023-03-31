@@ -3,9 +3,11 @@ import urllib.request
 import numpy as np
 import pandas as pd
 import pytest
+from pandas.util.testing import assert_frame_equal
 from replication_ppr.config import BLD, SRC
 
 from src.replication_ppr.data_management.dot import create_dot_final
+from src.replication_ppr.data_management.wb_classification import get_wb_classification
 
 
 @pytest.fixture()
@@ -88,3 +90,38 @@ def cia_url():
 
 def test_site_reachable(cia_url):
     urllib.request.urlopen(cia_url).getcode() == 200, "Site is not reachable"
+
+
+def test_wb_classification():
+    wb_data = pd.DataFrame(
+        {
+            "Country": [
+                "Canada",
+                "Rwanda",
+                "Zimbabwe",
+            ],
+            "Income group": ["High income", "Low income", "Lower middle income"],
+            "Region": ["North America", "Sub-Saharan Africa", "Sub-Saharan Africa"],
+        },
+    )
+    least_developed = pd.DataFrame({"country": ["Bangladesh", "Rwanda", "Haiti"]})
+    expected = pd.DataFrame(
+        {
+            "Country": ["Canada", "Rwanda", "Zimbabwe"],
+            "ISO3": ["CAN", "RWA", "ZWE"],
+            "Income group": ["High income", "Low income", "Lower middle income"],
+            "Region": ["North America", "Sub-Saharan Africa", "Sub-Saharan Africa"],
+            "least": [0, 1, 0],
+            "North America": [1, 0, 0],
+            "Sub-Saharan Africa": [0, 1, 1],
+            "High income": [1, 0, 0],
+            "Low income": [0, 1, 0],
+            "Lower middle income": [0, 0, 1],
+        },
+    )
+    wb_classification = get_wb_classification(wb_data, least_developed)
+    assert_frame_equal(
+        wb_classification,
+        expected,
+        check_dtype=False,
+    ), "Data frames are not equal as they should be."
