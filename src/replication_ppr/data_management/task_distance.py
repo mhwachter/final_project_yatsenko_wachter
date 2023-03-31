@@ -22,6 +22,7 @@ from replication_ppr.data_management.distance_calculation import (
     },
 )
 def task_coordinates(depends_on, produces):
+    """Extracts country coordinates from the CIA World Factbook and saves the data to a CSV file."""
     cia_factbook = pd.read_csv(depends_on["cia_factbook"])
     coordinates = get_coordinates(data=cia_factbook)
     coordinates.to_csv(produces["coordinates"])
@@ -38,6 +39,7 @@ def task_coordinates(depends_on, produces):
     },
 )
 def task_distance_calculation(depends_on, produces):
+    """Extracts,does all the calculations and saves distances dataset."""
     coordinates = pd.read_csv(depends_on["coordinates"])
     distances = calculate_distance(data=coordinates)
     distances = create_distance_data(data=distances)
