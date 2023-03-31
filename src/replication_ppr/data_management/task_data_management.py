@@ -49,6 +49,7 @@ def task_create_rta_final(depends_on, produces):
     },
 )
 def task_create_dot_final(depends_on, produces):
+    """Create final Direction of Trade dataset."""
     dot = pd.read_csv(depends_on["dot"])
     cpi = pd.read_csv(depends_on["cpi"])
     countries_list = pd.read_csv(depends_on["countries_list"])
@@ -67,6 +68,7 @@ def task_create_dot_final(depends_on, produces):
     },
 )
 def task_original_data(depends_on, produces):
+    """Reads original dataset,extends it with self sources data and saves."""
     original_data = pd.read_csv(depends_on["original_data"])
     original_extended = extend_original_data(data=original_data)
     original_extended.to_csv(produces["original_extended"], index=False)
@@ -84,6 +86,7 @@ def task_original_data(depends_on, produces):
     },
 )
 def task_wb_classification(depends_on, produces):
+    """  Reads World bank data and list of least developed countries,modifies it and saves."""
     wb_classification = pd.read_csv(depends_on["wb_classification"])
     least_developed = pd.read_csv(depends_on["least_developed"])
     wb_region_income = get_wb_classification(
@@ -105,6 +108,7 @@ def task_wb_classification(depends_on, produces):
 )
 @pytask.mark.produces(BLD / "python" / "data" / "data_final.csv")
 def task_final_dataset(depends_on, produces):
+    """Merges and processes multiple input datasets to create the final dataset."""
     cia_fact = pd.read_csv(depends_on["cia_factbook"])
     dot = pd.read_csv(depends_on["dot_final"])
     rta = pd.read_csv(depends_on["rta_final"])
