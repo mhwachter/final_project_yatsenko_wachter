@@ -170,7 +170,7 @@ def rename_columns(data):
         data(pd.DataFrame):final dataset.
 
     Returns:
-        data (pd.DataFrame):Dataset with renamed column.
+        data (pd.DataFrame):returns final dataset with renamed column.
 
     """
     data = data.rename(columns={"Year": "year"})
