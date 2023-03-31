@@ -1,3 +1,4 @@
+"""Script contains all the dependecies."""
 from subprocess import check_call
 
 
