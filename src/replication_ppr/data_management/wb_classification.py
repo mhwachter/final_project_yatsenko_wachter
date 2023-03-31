@@ -10,11 +10,11 @@ def get_wb_classification(wb_classification, least_developed):
     region and income group.
 
     Args:
-        wb_classification (pandas.DataFrame): Dataframe containing World Bank classification data.
-        least_developed (pandas.DataFrame): Dataframe containing list of least developed countries.
+        wb_classification (pd.DataFrame): Dataframe containing World Bank classification data.
+        least_developed (pd.DataFrame): Dataframe containing list of least developed countries.
 
     Returns:
-        pandas.DataFrame: Dataframe with World Bank classification data and dummy variables for region and income group.
+        pds.DataFrame: Dataframe with World Bank classification data and dummy variables for region and income group.
 
     """
     wb_classification["Country"] = cc.pandas_convert(
