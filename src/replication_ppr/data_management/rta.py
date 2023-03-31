@@ -6,12 +6,39 @@ import country_converter as coco
 cc = coco.CountryConverter()
 
 
-def unzip_rta_data(zip, unzip):
+def unzip_rta_data(zip: str, unzip: str) -> None:
+    """Unzips a file to a directory.
+
+    Args:
+        zip (str): The path to the ZIP file.
+        unzip (str): The path to the directory where the contents of the ZIP file should be extracted.
+
+    Returns:
+        None: This function does not return anything.
+
+    Raises:
+        zipfile.BadZipFile: If the ZIP file is invalid or corrupted.
+        zipfile.LargeZipFile: If the ZIP file is too large to handle.
+
+    Examples:
+        >>> unzip_rta_data('example.zip', 'example_dir')
+
+    """
     with zipfile.ZipFile(zip, "r") as zip_ref:
         zip_ref.extractall(unzip)
 
 
 def create_rta_final(data, countries_list):
+    """Preprocesses and cleans a pandas DataFrame containing international trade data.
+
+    Args:
+        data (pd.DataFrame): The input DataFrame containing international trade data. The DataFrame should have columns named "exporter", "importer", and "year".
+        countries_list (pd.DataFrame): A DataFrame containing a list of ISO3 country codes.
+
+    Returns:
+        data (pd.DataFrame): The preprocessed and cleaned DataFrame containing international trade data.
+
+    """
     iso3 = countries_list["ISO3"].to_list()
     data = data.rename(
         columns={"exporter": "ctry1", "importer": "ctry2", "year": "Year"},
