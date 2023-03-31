@@ -3,10 +3,11 @@ import urllib.request
 import numpy as np
 import pandas as pd
 import pytest
-from pandas.util.testing import assert_frame_equal
+from pandas.testing import assert_frame_equal
 from replication_ppr.config import BLD, SRC
 
 from src.replication_ppr.data_management.dot import create_dot_final
+from src.replication_ppr.data_management.original_data import extend_original_data
 from src.replication_ppr.data_management.wb_classification import get_wb_classification
 
 
@@ -15,7 +16,7 @@ def data():
     dot = pd.read_csv(SRC / "data" / "DOT.csv")
     rta = pd.read_csv(SRC / "data" / "rta.csv")
     cpi = pd.read_csv(SRC / "data" / "cpi_urban_consumers.csv")
-    original_data = pd.read_csv(BLD / "python" / "data" / "original_extended.csv")
+    original_data = pd.read_csv(SRC / "data" / "original_data_paper.csv")
     data_final = pd.read_csv(BLD / "python" / "data" / "data_final.csv")
     countries_list = pd.read_csv(SRC / "data" / "countries_list.csv")
     data = {
@@ -30,13 +31,15 @@ def data():
 
 
 def test_no_na(data):
-    assert data["original_data"].notna().all().all(), "There are NAs in the data frame."
+    original_extended = extend_original_data(data=data["original_data"])
+    assert original_extended.notna().all().all(), "There are NAs in the data frame."
 
 
 def test_numerical(data):
+    original_extended = extend_original_data(data=data["original_data"])
     assert all(
         np.issubdtype(dtype, np.number)
-        for dtype in data["original_data"][
+        for dtype in original_extended[
             [
                 "ldist",
                 "lrgdp",
@@ -61,7 +64,8 @@ def test_numerical(data):
 
 
 def test_unique_country_year_pairs1(data):
-    assert data["original_data"][
+    original_extended = extend_original_data(data=data["original_data"])
+    assert original_extended[
         "pair_year_id_ISO3"
     ].is_unique, "There are multiple observation for a country pair in a given year, which should not be the case."
 
@@ -124,4 +128,4 @@ def test_wb_classification():
         wb_classification,
         expected,
         check_dtype=False,
-    ), "Data frames are not equal as they should be."
+    ), "Data frames are not equal but they should be."
