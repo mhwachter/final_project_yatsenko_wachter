@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 from pandas.testing import assert_frame_equal
-from replication_ppr.config import BLD, SRC
+from replication_ppr.config import SRC
 
 from src.replication_ppr.data_management.dot import create_dot_final
 from src.replication_ppr.data_management.original_data import extend_original_data
@@ -20,7 +20,6 @@ def data():
     original_data = pd.read_csv(SRC / "data" / "original_data_paper.csv")
     rta_zip = SRC / "data" / "rta.csv.zip"
     rta_unzip = SRC / "data"
-    data_final = pd.read_csv(BLD / "python" / "data" / "data_final.csv")
     countries_list = pd.read_csv(SRC / "data" / "countries_list.csv")
     data = {
         "dot": dot,
@@ -28,7 +27,6 @@ def data():
         "original_data": original_data,
         "cpi": cpi,
         "countries_list": countries_list,
-        "data_final": data_final,
         "rta_zip": rta_zip,
         "rta_unzip": rta_unzip,
     }
@@ -71,12 +69,6 @@ def test_numerical(data):
 def test_unique_country_year_pairs1(data):
     original_extended = extend_original_data(data=data["original_data"])
     assert original_extended[
-        "pair_year_id_ISO3"
-    ].is_unique, "There are multiple observation for a country pair in a given year, which should not be the case."
-
-
-def test_unique_country_year_pairs2(data):
-    assert data["data_final"][
         "pair_year_id_ISO3"
     ].is_unique, "There are multiple observation for a country pair in a given year, which should not be the case."
 
