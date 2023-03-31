@@ -33,6 +33,7 @@ repos:
           - --fix=lf
         description: Forces to replace line ending by the UNIX 'lf' character.
       - id: name-tests-test
+        exclude: tests/analysis/task_check_same_results.py
         args:
           - --pytest-test-first
       - id: trailing-whitespace
