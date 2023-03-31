@@ -1,3 +1,4 @@
+"""Tests."""
 import urllib.request
 
 import numpy as np
