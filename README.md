@@ -10,7 +10,7 @@
 
 ## Description
 
-This project replicates the paper Rose, A. K. (2004). Do We Really Know That the WTO
+This repository contains our final project for the course *Effective Programming Practices for Economists* held in the winter semester 2022/23 at the University of Bonn as part of our master's program in Economics. The project replicates the paper Rose, A. K. (2004). Do We Really Know That the WTO
 Increases Trade? *American Economic Review*, *94*(1), 98–114.
 https://www.doi.org/10.1257/000282804322970724.
 
